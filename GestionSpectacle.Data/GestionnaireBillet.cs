@@ -1,4 +1,4 @@
-using EFCoreConsoleApp.DAL.Context;
+using GestionSpectacle.DAL.Context;
 using GestionSpectacle.DAL.Entities;
 using Microsoft.EntityFrameworkCore;
 

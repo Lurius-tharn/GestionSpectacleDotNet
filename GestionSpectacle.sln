@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestionSpectacle.DAL", "Ges
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestionSpectacle.Data", "GestionSpectacle.Data\GestionSpectacle.Data.csproj", "{BE57B847-30DD-4469-9ACF-3E7409607FE7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionSpectacle", "GestionSpectacle\GestionSpectacle.csproj", "{D023CBD0-10E2-43D9-AB23-579B25AB28B7}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionSpectacle.Vue", "GestionSpectacle.Vue\GestionSpectacle.Vue.csproj", "{4D889D73-DCD0-4781-9606-52639D0FCB61}"
 EndProject
 Global
@@ -25,10 +23,6 @@ Global
 		{BE57B847-30DD-4469-9ACF-3E7409607FE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE57B847-30DD-4469-9ACF-3E7409607FE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE57B847-30DD-4469-9ACF-3E7409607FE7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D023CBD0-10E2-43D9-AB23-579B25AB28B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D023CBD0-10E2-43D9-AB23-579B25AB28B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D023CBD0-10E2-43D9-AB23-579B25AB28B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D023CBD0-10E2-43D9-AB23-579B25AB28B7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4D889D73-DCD0-4781-9606-52639D0FCB61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4D889D73-DCD0-4781-9606-52639D0FCB61}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D889D73-DCD0-4781-9606-52639D0FCB61}.Release|Any CPU.ActiveCfg = Release|Any CPU

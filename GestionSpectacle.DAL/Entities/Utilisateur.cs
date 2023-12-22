@@ -14,4 +14,6 @@ public class Utilisateur
 
 
     public string? Password { get; set; }
+
+    [MaxLength(16)] public byte[]? Salt { get; set; }
 }

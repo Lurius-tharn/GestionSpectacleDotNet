@@ -29,206 +29,166 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            menuStrip1 = new MenuStrip();
-            acceuilToolStripMenuItem = new ToolStripMenuItem();
-            inscriptionToolStripMenuItem = new ToolStripMenuItem();
-            compteToolStripMenuItem = new ToolStripMenuItem();
-            panierToolStripMenuItem = new ToolStripMenuItem();
-            reservationToolStripMenuItem = new ToolStripMenuItem();
-            historiqueToolStripMenuItem = new ToolStripMenuItem();
-            evenementsToolStripMenuItem = new ToolStripMenuItem();
-            aideToolStripMenuItem = new ToolStripMenuItem();
-            aProposToolStripMenuItem = new ToolStripMenuItem();
-            contextMenuStrip1 = new ContextMenuStrip(components);
-            panelAcceuil = new Panel();
-            buttonDeconnexion = new Button();
-            label3 = new Label();
-            textBoxAcceuilPassword = new TextBox();
-            textBoxAcceuilUser = new TextBox();
-            label2 = new Label();
-            label1 = new Label();
-            buttonConnexion = new Button();
-            menuStrip1.SuspendLayout();
-            panelAcceuil.SuspendLayout();
-            SuspendLayout();
+            this.components = new System.ComponentModel.Container();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.acceuilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inscriptionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.compteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reservationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.historiqueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.evenementsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aProposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.panelAcceuil = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.menuStrip1.SuspendLayout();
+            this.panelAcceuil.SuspendLayout();
+            this.SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { acceuilToolStripMenuItem, compteToolStripMenuItem, evenementsToolStripMenuItem, aideToolStripMenuItem });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(802, 28);
-            menuStrip1.TabIndex = 16;
-            menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.acceuilToolStripMenuItem,
+            this.compteToolStripMenuItem,
+            this.evenementsToolStripMenuItem,
+            this.aideToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1002, 33);
+            this.menuStrip1.TabIndex = 16;
+            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // acceuilToolStripMenuItem
             // 
-            acceuilToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { inscriptionToolStripMenuItem });
-            acceuilToolStripMenuItem.Name = "acceuilToolStripMenuItem";
-            acceuilToolStripMenuItem.Size = new Size(71, 24);
-            acceuilToolStripMenuItem.Text = "Acceuil";
-            acceuilToolStripMenuItem.Click += acceuilToolStripMenuItem_Click;
+            this.acceuilToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.inscriptionToolStripMenuItem,
+            this.toolStripMenuItem1});
+            this.acceuilToolStripMenuItem.Name = "acceuilToolStripMenuItem";
+            this.acceuilToolStripMenuItem.Size = new System.Drawing.Size(83, 29);
+            this.acceuilToolStripMenuItem.Text = "Acceuil";
+            this.acceuilToolStripMenuItem.Click += new System.EventHandler(this.acceuilToolStripMenuItem_Click_1);
             // 
             // inscriptionToolStripMenuItem
             // 
-            inscriptionToolStripMenuItem.Name = "inscriptionToolStripMenuItem";
-            inscriptionToolStripMenuItem.Size = new Size(161, 26);
-            inscriptionToolStripMenuItem.Text = "Inscription";
-            inscriptionToolStripMenuItem.Click += inscriptionToolStripMenuItem_Click;
+            this.inscriptionToolStripMenuItem.Name = "inscriptionToolStripMenuItem";
+            this.inscriptionToolStripMenuItem.Size = new System.Drawing.Size(273, 34);
+            this.inscriptionToolStripMenuItem.Text = "Inscription";
+            this.inscriptionToolStripMenuItem.Click += new System.EventHandler(this.inscriptionToolStripMenuItem_Click_1);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(273, 34);
+            this.toolStripMenuItem1.Text = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // compteToolStripMenuItem
             // 
-            compteToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { panierToolStripMenuItem, reservationToolStripMenuItem, historiqueToolStripMenuItem });
-            compteToolStripMenuItem.Name = "compteToolStripMenuItem";
-            compteToolStripMenuItem.Size = new Size(76, 24);
-            compteToolStripMenuItem.Text = "Compte";
+            this.compteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.panierToolStripMenuItem,
+            this.reservationToolStripMenuItem,
+            this.historiqueToolStripMenuItem});
+            this.compteToolStripMenuItem.Name = "compteToolStripMenuItem";
+            this.compteToolStripMenuItem.Size = new System.Drawing.Size(92, 29);
+            this.compteToolStripMenuItem.Text = "Compte";
+            this.compteToolStripMenuItem.Click += new System.EventHandler(this.compteToolStripMenuItem_Click);
             // 
             // panierToolStripMenuItem
             // 
-            panierToolStripMenuItem.Name = "panierToolStripMenuItem";
-            panierToolStripMenuItem.Size = new Size(224, 26);
-            panierToolStripMenuItem.Text = "Panier";
-            panierToolStripMenuItem.Click += panierToolStripMenuItem_Click;
+            this.panierToolStripMenuItem.Name = "panierToolStripMenuItem";
+            this.panierToolStripMenuItem.Size = new System.Drawing.Size(205, 34);
+            this.panierToolStripMenuItem.Text = "Panier";
+            this.panierToolStripMenuItem.Click += new System.EventHandler(this.panierToolStripMenuItem_Click_1);
             // 
             // reservationToolStripMenuItem
             // 
-            reservationToolStripMenuItem.Name = "reservationToolStripMenuItem";
-            reservationToolStripMenuItem.Size = new Size(224, 26);
-            reservationToolStripMenuItem.Text = "Reservation";
-            reservationToolStripMenuItem.Click += reservationToolStripMenuItem_Click;
+            this.reservationToolStripMenuItem.Name = "reservationToolStripMenuItem";
+            this.reservationToolStripMenuItem.Size = new System.Drawing.Size(205, 34);
+            this.reservationToolStripMenuItem.Text = "Reservation";
+            this.reservationToolStripMenuItem.Click += new System.EventHandler(this.reservationToolStripMenuItem_Click_1);
             // 
             // historiqueToolStripMenuItem
             // 
-            historiqueToolStripMenuItem.Name = "historiqueToolStripMenuItem";
-            historiqueToolStripMenuItem.Size = new Size(224, 26);
-            historiqueToolStripMenuItem.Text = "Historique";
-            historiqueToolStripMenuItem.Click += historiqueToolStripMenuItem_Click;
+            this.historiqueToolStripMenuItem.Name = "historiqueToolStripMenuItem";
+            this.historiqueToolStripMenuItem.Size = new System.Drawing.Size(205, 34);
+            this.historiqueToolStripMenuItem.Text = "Historique";
+            this.historiqueToolStripMenuItem.Click += new System.EventHandler(this.historiqueToolStripMenuItem_Click_1);
             // 
             // evenementsToolStripMenuItem
             // 
-            evenementsToolStripMenuItem.Name = "evenementsToolStripMenuItem";
-            evenementsToolStripMenuItem.Size = new Size(102, 24);
-            evenementsToolStripMenuItem.Text = "Evenements";
-            evenementsToolStripMenuItem.Click += evenementsToolStripMenuItem_Click;
+            this.evenementsToolStripMenuItem.Name = "evenementsToolStripMenuItem";
+            this.evenementsToolStripMenuItem.Size = new System.Drawing.Size(123, 29);
+            this.evenementsToolStripMenuItem.Text = "Evenements";
+            this.evenementsToolStripMenuItem.Click += new System.EventHandler(this.evenementsToolStripMenuItem_Click_1);
             // 
             // aideToolStripMenuItem
             // 
-            aideToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { aProposToolStripMenuItem });
-            aideToolStripMenuItem.Name = "aideToolStripMenuItem";
-            aideToolStripMenuItem.Size = new Size(54, 24);
-            aideToolStripMenuItem.Text = "Aide";
+            this.aideToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aProposToolStripMenuItem});
+            this.aideToolStripMenuItem.Name = "aideToolStripMenuItem";
+            this.aideToolStripMenuItem.Size = new System.Drawing.Size(64, 29);
+            this.aideToolStripMenuItem.Text = "Aide";
+            this.aideToolStripMenuItem.Click += new System.EventHandler(this.aideToolStripMenuItem_Click);
             // 
             // aProposToolStripMenuItem
             // 
-            aProposToolStripMenuItem.Name = "aProposToolStripMenuItem";
-            aProposToolStripMenuItem.Size = new Size(153, 26);
-            aProposToolStripMenuItem.Text = "A propos";
+            this.aProposToolStripMenuItem.Name = "aProposToolStripMenuItem";
+            this.aProposToolStripMenuItem.Size = new System.Drawing.Size(189, 34);
+            this.aProposToolStripMenuItem.Text = "A propos";
+            this.aProposToolStripMenuItem.Click += new System.EventHandler(this.aProposToolStripMenuItem_Click);
             // 
             // contextMenuStrip1
             // 
-            contextMenuStrip1.ImageScalingSize = new Size(20, 20);
-            contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(61, 4);
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // panelAcceuil
             // 
-            panelAcceuil.Controls.Add(buttonDeconnexion);
-            panelAcceuil.Controls.Add(label3);
-            panelAcceuil.Controls.Add(textBoxAcceuilPassword);
-            panelAcceuil.Controls.Add(textBoxAcceuilUser);
-            panelAcceuil.Controls.Add(label2);
-            panelAcceuil.Controls.Add(label1);
-            panelAcceuil.Controls.Add(buttonConnexion);
-            panelAcceuil.Location = new Point(0, 32);
-            panelAcceuil.Margin = new Padding(3, 4, 3, 4);
-            panelAcceuil.Name = "panelAcceuil";
-            panelAcceuil.Size = new Size(802, 515);
-            panelAcceuil.TabIndex = 19;
-            // 
-            // buttonDeconnexion
-            // 
-            buttonDeconnexion.Location = new Point(424, 435);
-            buttonDeconnexion.Margin = new Padding(3, 4, 3, 4);
-            buttonDeconnexion.Name = "buttonDeconnexion";
-            buttonDeconnexion.Size = new Size(112, 29);
-            buttonDeconnexion.TabIndex = 6;
-            buttonDeconnexion.Text = "Deconnexion";
-            buttonDeconnexion.UseVisualStyleBackColor = true;
+            this.panelAcceuil.Controls.Add(this.label3);
+            this.panelAcceuil.Location = new System.Drawing.Point(0, 40);
+            this.panelAcceuil.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panelAcceuil.Name = "panelAcceuil";
+            this.panelAcceuil.Size = new System.Drawing.Size(1002, 644);
+            this.panelAcceuil.TabIndex = 19;
+            this.panelAcceuil.Paint += new System.Windows.Forms.PaintEventHandler(this.panelAcceuil_Paint_1);
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(340, 90);
-            label3.Name = "label3";
-            label3.Size = new Size(151, 46);
-            label3.TabIndex = 5;
-            label3.Text = "Acceuil";
-            // 
-            // textBoxAcceuilPassword
-            // 
-            textBoxAcceuilPassword.Location = new Point(381, 266);
-            textBoxAcceuilPassword.Margin = new Padding(3, 4, 3, 4);
-            textBoxAcceuilPassword.Name = "textBoxAcceuilPassword";
-            textBoxAcceuilPassword.Size = new Size(100, 27);
-            textBoxAcceuilPassword.TabIndex = 4;
-            // 
-            // textBoxAcceuilUser
-            // 
-            textBoxAcceuilUser.Location = new Point(381, 212);
-            textBoxAcceuilUser.Margin = new Padding(3, 4, 3, 4);
-            textBoxAcceuilUser.Name = "textBoxAcceuilUser";
-            textBoxAcceuilUser.Size = new Size(100, 27);
-            textBoxAcceuilUser.TabIndex = 3;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(211, 269);
-            label2.Name = "label2";
-            label2.Size = new Size(98, 20);
-            label2.TabIndex = 2;
-            label2.Text = "Mot de passe";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(211, 215);
-            label1.Name = "label1";
-            label1.Size = new Size(123, 20);
-            label1.TabIndex = 1;
-            label1.Text = "Nom d'utilisateur";
-            label1.Click += label1_Click;
-            // 
-            // buttonConnexion
-            // 
-            buttonConnexion.Location = new Point(291, 435);
-            buttonConnexion.Margin = new Padding(3, 4, 3, 4);
-            buttonConnexion.Name = "buttonConnexion";
-            buttonConnexion.Size = new Size(113, 29);
-            buttonConnexion.TabIndex = 0;
-            buttonConnexion.Text = "Connexion";
-            buttonConnexion.UseVisualStyleBackColor = true;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(384, 85);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(205, 55);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Accueuil";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // Acceuil
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(802, 566);
-            Controls.Add(panelAcceuil);
-            Controls.Add(menuStrip1);
-            Margin = new Padding(3, 4, 3, 4);
-            Name = "Acceuil";
-            Text = " ";
-            Load += Acceuil_Load;
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
-            panelAcceuil.ResumeLayout(false);
-            panelAcceuil.PerformLayout();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1002, 708);
+            this.Controls.Add(this.panelAcceuil);
+            this.Controls.Add(this.menuStrip1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Name = "Acceuil";
+            this.Text = " ";
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.panelAcceuil.ResumeLayout(false);
+            this.panelAcceuil.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
@@ -242,14 +202,9 @@
         private ToolStripMenuItem aProposToolStripMenuItem;
         private ContextMenuStrip contextMenuStrip1;
         private Panel panelAcceuil;
-        private Button buttonDeconnexion;
         private Label label3;
-        private TextBox textBoxAcceuilPassword;
-        private TextBox textBoxAcceuilUser;
-        private Label label2;
-        private Label label1;
-        private Button buttonConnexion;
         private ToolStripMenuItem inscriptionToolStripMenuItem;
         private ToolStripMenuItem panierToolStripMenuItem;
+        private ToolStripMenuItem toolStripMenuItem1;
     }
 }

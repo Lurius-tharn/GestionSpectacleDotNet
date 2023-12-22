@@ -1,7 +1,7 @@
 ﻿using GestionSpectacle.DAL.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace EFCoreConsoleApp.DAL.Context;
+namespace GestionSpectacle.DAL.Context;
 
 public partial class MyDbContext : DbContext
 {
@@ -102,6 +102,8 @@ public partial class MyDbContext : DbContext
             entity.Property(e => e.Password)
                 .HasMaxLength(36)
                 .HasColumnName("password");
+            entity.Property(e => e.Salt)
+                .HasColumnName("salt");
         });
         modelBuilder.Entity<BilletHistorique>(entity =>
         {
