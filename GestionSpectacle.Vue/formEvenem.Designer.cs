@@ -28,227 +28,244 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            panelAcceuil = new Panel();
-            label3 = new Label();
-            label2 = new Label();
-            label1 = new Label();
-            dateTimePickerFirst = new DateTimePicker();
-            dateTimePickerLast = new DateTimePicker();
-            panel1 = new Panel();
-            buttonPanier = new Button();
-            panel2 = new Panel();
-            dataGridView1 = new DataGridView();
-            evenNom = new DataGridViewTextBoxColumn();
-            evenType = new DataGridViewTextBoxColumn();
-            evenDate = new DataGridViewTextBoxColumn();
-            evenLieu = new DataGridViewTextBoxColumn();
-            evenPlaces = new DataGridViewTextBoxColumn();
-            evenPrix = new DataGridViewTextBoxColumn();
-            buttonNext = new Button();
-            buttonPrevious = new Button();
-            monthCalendar = new MonthCalendar();
-            contextMenuStrip1 = new ContextMenuStrip(components);
-            panelAcceuil.SuspendLayout();
-            panel1.SuspendLayout();
-            panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            SuspendLayout();
+            this.components = new System.ComponentModel.Container();
+            this.panelAcceuil = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dateTimePickerFirst = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerLast = new System.Windows.Forms.DateTimePicker();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonPanier = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.spectaclesDataGridView = new System.Windows.Forms.DataGridView();
+            this.evenNom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.evenType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.evenDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.evenLieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.evenPlaces = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.evenPrix = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonNext = new System.Windows.Forms.Button();
+            this.buttonPrevious = new System.Windows.Forms.Button();
+            this.monthCalendar = new System.Windows.Forms.MonthCalendar();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.buttonRechercher = new System.Windows.Forms.Button();
+            this.VilleSpectacleInput = new System.Windows.Forms.TextBox();
+            this.panelAcceuil.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spectaclesDataGridView)).BeginInit();
+            this.SuspendLayout();
             // 
             // panelAcceuil
             // 
-            panelAcceuil.Controls.Add(label3);
-            panelAcceuil.Controls.Add(label2);
-            panelAcceuil.Controls.Add(label1);
-            panelAcceuil.Controls.Add(dateTimePickerFirst);
-            panelAcceuil.Controls.Add(dateTimePickerLast);
-            panelAcceuil.Controls.Add(panel1);
-            panelAcceuil.Controls.Add(monthCalendar);
-            panelAcceuil.Location = new Point(12, 39);
-            panelAcceuil.Margin = new Padding(3, 4, 3, 4);
-            panelAcceuil.Name = "panelAcceuil";
-            panelAcceuil.Size = new Size(1132, 732);
-            panelAcceuil.TabIndex = 1;
+            this.panelAcceuil.Controls.Add(this.VilleSpectacleInput);
+            this.panelAcceuil.Controls.Add(this.buttonRechercher);
+            this.panelAcceuil.Controls.Add(this.label3);
+            this.panelAcceuil.Controls.Add(this.label2);
+            this.panelAcceuil.Controls.Add(this.label1);
+            this.panelAcceuil.Controls.Add(this.dateTimePickerFirst);
+            this.panelAcceuil.Controls.Add(this.dateTimePickerLast);
+            this.panelAcceuil.Controls.Add(this.panel1);
+            this.panelAcceuil.Controls.Add(this.monthCalendar);
+            this.panelAcceuil.Location = new System.Drawing.Point(10, 29);
+            this.panelAcceuil.Name = "panelAcceuil";
+            this.panelAcceuil.Size = new System.Drawing.Size(990, 549);
+            this.panelAcceuil.TabIndex = 1;
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(13, 21);
-            label3.Name = "label3";
-            label3.Size = new Size(240, 46);
-            label3.TabIndex = 7;
-            label3.Text = "Evenements";
-            label3.Click += label3_Click;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(11, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(192, 37);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Evenements";
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(9, 159);
-            label2.Name = "label2";
-            label2.Size = new Size(27, 20);
-            label2.TabIndex = 6;
-            label2.Text = "Au";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(8, 119);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(22, 15);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Au";
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(6, 92);
-            label1.Name = "label1";
-            label1.Size = new Size(28, 20);
-            label1.TabIndex = 5;
-            label1.Text = "Du";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(5, 69);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(22, 15);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Du";
             // 
             // dateTimePickerFirst
             // 
-            dateTimePickerFirst.Location = new Point(9, 116);
-            dateTimePickerFirst.Margin = new Padding(3, 4, 3, 4);
-            dateTimePickerFirst.Name = "dateTimePickerFirst";
-            dateTimePickerFirst.Size = new Size(262, 27);
-            dateTimePickerFirst.TabIndex = 4;
+            this.dateTimePickerFirst.Location = new System.Drawing.Point(8, 87);
+            this.dateTimePickerFirst.Name = "dateTimePickerFirst";
+            this.dateTimePickerFirst.Size = new System.Drawing.Size(230, 23);
+            this.dateTimePickerFirst.TabIndex = 4;
             // 
             // dateTimePickerLast
             // 
-            dateTimePickerLast.Location = new Point(9, 186);
-            dateTimePickerLast.Margin = new Padding(3, 4, 3, 4);
-            dateTimePickerLast.Name = "dateTimePickerLast";
-            dateTimePickerLast.Size = new Size(262, 27);
-            dateTimePickerLast.TabIndex = 3;
+            this.dateTimePickerLast.Location = new System.Drawing.Point(8, 140);
+            this.dateTimePickerLast.Name = "dateTimePickerLast";
+            this.dateTimePickerLast.Size = new System.Drawing.Size(230, 23);
+            this.dateTimePickerLast.TabIndex = 3;
             // 
             // panel1
             // 
-            panel1.Controls.Add(buttonPanier);
-            panel1.Controls.Add(panel2);
-            panel1.Controls.Add(buttonNext);
-            panel1.Controls.Add(buttonPrevious);
-            panel1.Location = new Point(280, 21);
-            panel1.Margin = new Padding(3, 4, 3, 4);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(849, 710);
-            panel1.TabIndex = 2;
+            this.panel1.Controls.Add(this.buttonPanier);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.buttonNext);
+            this.panel1.Controls.Add(this.buttonPrevious);
+            this.panel1.Location = new System.Drawing.Point(245, 16);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(743, 532);
+            this.panel1.TabIndex = 2;
             // 
             // buttonPanier
             // 
-            buttonPanier.Location = new Point(373, 632);
-            buttonPanier.Name = "buttonPanier";
-            buttonPanier.Size = new Size(94, 29);
-            buttonPanier.TabIndex = 4;
-            buttonPanier.Text = "Panier";
-            buttonPanier.UseVisualStyleBackColor = true;
-            buttonPanier.Click += buttonPanier_Click;
+            this.buttonPanier.Location = new System.Drawing.Point(326, 474);
+            this.buttonPanier.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonPanier.Name = "buttonPanier";
+            this.buttonPanier.Size = new System.Drawing.Size(82, 22);
+            this.buttonPanier.TabIndex = 4;
+            this.buttonPanier.Text = "Panier";
+            this.buttonPanier.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
-            panel2.Controls.Add(dataGridView1);
-            panel2.Location = new Point(3, 4);
-            panel2.Margin = new Padding(3, 4, 3, 4);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(846, 575);
-            panel2.TabIndex = 3;
+            this.panel2.Controls.Add(this.spectaclesDataGridView);
+            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(740, 431);
+            this.panel2.TabIndex = 3;
             // 
-            // dataGridView1
+            // spectaclesDataGridView
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { evenNom, evenType, evenDate, evenLieu, evenPlaces, evenPrix });
-            dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(0, 0);
-            dataGridView1.Margin = new Padding(3, 4, 3, 4);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 24;
-            dataGridView1.Size = new Size(846, 575);
-            dataGridView1.TabIndex = 4;
+            this.spectaclesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.spectaclesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.evenNom,
+            this.evenType,
+            this.evenDate,
+            this.evenLieu,
+            this.evenPlaces,
+            this.evenPrix});
+            this.spectaclesDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.spectaclesDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.spectaclesDataGridView.Name = "spectaclesDataGridView";
+            this.spectaclesDataGridView.RowHeadersWidth = 51;
+            this.spectaclesDataGridView.RowTemplate.Height = 24;
+            this.spectaclesDataGridView.Size = new System.Drawing.Size(740, 431);
+            this.spectaclesDataGridView.TabIndex = 4;
             // 
             // evenNom
             // 
-            evenNom.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            evenNom.HeaderText = "Nom";
-            evenNom.MinimumWidth = 6;
-            evenNom.Name = "evenNom";
+            this.evenNom.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.evenNom.HeaderText = "Nom";
+            this.evenNom.MinimumWidth = 6;
+            this.evenNom.Name = "evenNom";
             // 
             // evenType
             // 
-            evenType.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            evenType.HeaderText = "Type";
-            evenType.MinimumWidth = 6;
-            evenType.Name = "evenType";
+            this.evenType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.evenType.HeaderText = "Type";
+            this.evenType.MinimumWidth = 6;
+            this.evenType.Name = "evenType";
             // 
             // evenDate
             // 
-            evenDate.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            evenDate.HeaderText = "Date";
-            evenDate.MinimumWidth = 6;
-            evenDate.Name = "evenDate";
+            this.evenDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.evenDate.HeaderText = "Date";
+            this.evenDate.MinimumWidth = 6;
+            this.evenDate.Name = "evenDate";
             // 
             // evenLieu
             // 
-            evenLieu.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            evenLieu.HeaderText = "Lieu";
-            evenLieu.MinimumWidth = 6;
-            evenLieu.Name = "evenLieu";
+            this.evenLieu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.evenLieu.HeaderText = "Lieu";
+            this.evenLieu.MinimumWidth = 6;
+            this.evenLieu.Name = "evenLieu";
             // 
             // evenPlaces
             // 
-            evenPlaces.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            evenPlaces.HeaderText = "Places";
-            evenPlaces.MinimumWidth = 6;
-            evenPlaces.Name = "evenPlaces";
+            this.evenPlaces.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.evenPlaces.HeaderText = "Places";
+            this.evenPlaces.MinimumWidth = 6;
+            this.evenPlaces.Name = "evenPlaces";
             // 
             // evenPrix
             // 
-            evenPrix.HeaderText = "Prix";
-            evenPrix.MinimumWidth = 6;
-            evenPrix.Name = "evenPrix";
-            evenPrix.Width = 125;
+            this.evenPrix.HeaderText = "Prix";
+            this.evenPrix.MinimumWidth = 6;
+            this.evenPrix.Name = "evenPrix";
+            this.evenPrix.Width = 125;
             // 
             // buttonNext
             // 
-            buttonNext.Location = new Point(718, 622);
-            buttonNext.Margin = new Padding(3, 4, 3, 4);
-            buttonNext.Name = "buttonNext";
-            buttonNext.Size = new Size(54, 49);
-            buttonNext.TabIndex = 1;
-            buttonNext.Text = ">";
-            buttonNext.UseVisualStyleBackColor = true;
+            this.buttonNext.Location = new System.Drawing.Point(628, 466);
+            this.buttonNext.Name = "buttonNext";
+            this.buttonNext.Size = new System.Drawing.Size(47, 37);
+            this.buttonNext.TabIndex = 1;
+            this.buttonNext.Text = ">";
+            this.buttonNext.UseVisualStyleBackColor = true;
             // 
             // buttonPrevious
             // 
-            buttonPrevious.Location = new Point(55, 622);
-            buttonPrevious.Margin = new Padding(3, 4, 3, 4);
-            buttonPrevious.Name = "buttonPrevious";
-            buttonPrevious.Size = new Size(54, 49);
-            buttonPrevious.TabIndex = 0;
-            buttonPrevious.Text = "<";
-            buttonPrevious.UseVisualStyleBackColor = true;
+            this.buttonPrevious.Location = new System.Drawing.Point(48, 466);
+            this.buttonPrevious.Name = "buttonPrevious";
+            this.buttonPrevious.Size = new System.Drawing.Size(47, 37);
+            this.buttonPrevious.TabIndex = 0;
+            this.buttonPrevious.Text = "<";
+            this.buttonPrevious.UseVisualStyleBackColor = true;
             // 
             // monthCalendar
             // 
-            monthCalendar.Location = new Point(9, 229);
-            monthCalendar.Margin = new Padding(9, 11, 9, 11);
-            monthCalendar.Name = "monthCalendar";
-            monthCalendar.TabIndex = 1;
+            this.monthCalendar.Location = new System.Drawing.Point(0, 288);
+            this.monthCalendar.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.monthCalendar.Name = "monthCalendar";
+            this.monthCalendar.TabIndex = 1;
             // 
             // contextMenuStrip1
             // 
-            contextMenuStrip1.ImageScalingSize = new Size(20, 20);
-            contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(61, 4);
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // buttonRechercher
+            // 
+            this.buttonRechercher.Location = new System.Drawing.Point(77, 500);
+            this.buttonRechercher.Name = "buttonRechercher";
+            this.buttonRechercher.Size = new System.Drawing.Size(75, 23);
+            this.buttonRechercher.TabIndex = 8;
+            this.buttonRechercher.Text = "Rechercher";
+            this.buttonRechercher.UseVisualStyleBackColor = true;
+            // 
+            // VilleSpectacleInput
+            // 
+            this.VilleSpectacleInput.Location = new System.Drawing.Point(11, 217);
+            this.VilleSpectacleInput.Name = "VilleSpectacleInput";
+            this.VilleSpectacleInput.Size = new System.Drawing.Size(216, 23);
+            this.VilleSpectacleInput.TabIndex = 9;
             // 
             // formEvenem
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1156, 782);
-            Controls.Add(panelAcceuil);
-            Margin = new Padding(3, 4, 3, 4);
-            Name = "formEvenem";
-            Text = "formEvenem";
-            panelAcceuil.ResumeLayout(false);
-            panelAcceuil.PerformLayout();
-            panel1.ResumeLayout(false);
-            panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1012, 586);
+            this.Controls.Add(this.panelAcceuil);
+            this.Name = "formEvenem";
+            this.Text = "formEvenem";
+            this.panelAcceuil.ResumeLayout(false);
+            this.panelAcceuil.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.spectaclesDataGridView)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
@@ -265,12 +282,14 @@
         private Label label3;
         private Panel panel2;
         private Button buttonPanier;
-        private DataGridView dataGridView1;
+        private DataGridView spectaclesDataGridView;
         private DataGridViewTextBoxColumn evenNom;
         private DataGridViewTextBoxColumn evenType;
         private DataGridViewTextBoxColumn evenDate;
         private DataGridViewTextBoxColumn evenLieu;
         private DataGridViewTextBoxColumn evenPlaces;
         private DataGridViewTextBoxColumn evenPrix;
+        private Button buttonRechercher;
+        private TextBox VilleSpectacleInput;
     }
 }

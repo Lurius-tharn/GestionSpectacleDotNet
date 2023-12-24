@@ -1,5 +1,4 @@
-﻿using System.ComponentModel;
-using GestionSpectacle.Vue;
+﻿using GestionSpectacle.Vue;
 
 namespace WindowsFormsApp1;
 
@@ -8,8 +7,11 @@ public partial class Acceuil : Form
     private readonly FormConnexion
         _formConnexion;
 
-    private UserControl activeControl;
     private readonly formInscription formInscription;
+
+    private readonly formEvenem _formEvenem;
+
+    private UserControl activeControl;
     private Panel mainPanel;
 
     public Acceuil()
@@ -17,6 +19,7 @@ public partial class Acceuil : Form
         InitializeComponent();
         formInscription = new formInscription();
         _formConnexion = new FormConnexion();
+        _formEvenem = new formEvenem();
     }
 
 
@@ -90,71 +93,9 @@ public partial class Acceuil : Form
         ShowFormInPanel(_formConnexion);
     }
 
-    private void panelAcceuil_Paint_1(object sender, PaintEventArgs e)
-    {
-    }
 
-    private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+    private void rechercherDesEvenementsToolStripMenuItem_Click(object sender, EventArgs e)
     {
-    }
-
-    private void acceuilToolStripMenuItem_Click_1(object sender, EventArgs e)
-    {
-    }
-
-    private void compteToolStripMenuItem_Click(object sender, EventArgs e)
-    {
-    }
-
-    private void panierToolStripMenuItem_Click_1(object sender, EventArgs e)
-    {
-    }
-
-    private void reservationToolStripMenuItem_Click_1(object sender, EventArgs e)
-    {
-    }
-
-    private void historiqueToolStripMenuItem_Click_1(object sender, EventArgs e)
-    {
-    }
-
-    private void evenementsToolStripMenuItem_Click_1(object sender, EventArgs e)
-    {
-    }
-
-    private void aideToolStripMenuItem_Click(object sender, EventArgs e)
-    {
-    }
-
-    private void aProposToolStripMenuItem_Click(object sender, EventArgs e)
-    {
-    }
-
-    private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
-    {
-    }
-
-    private void textBoxAcceuilUser_TextChanged(object sender, EventArgs e)
-    {
-    }
-
-    private void buttonDeconnexion_Click(object sender, EventArgs e)
-    {
-    }
-
-    private void label2_Click(object sender, EventArgs e)
-    {
-    }
-
-    private void label3_Click(object sender, EventArgs e)
-    {
-    }
-
-    private void textBoxAcceuilPassword_TextChanged(object sender, EventArgs e)
-    {
-    }
-
-    private void label1_Click_1(object sender, EventArgs e)
-    {
+        ShowFormInPanel(_formEvenem);
     }
 }
