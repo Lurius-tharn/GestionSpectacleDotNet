@@ -50,7 +50,9 @@ public partial class formEvenem : Form
         }
     }
 
-    private async void buttonRechercher_Click(object sender, EventArgs e)
+
+
+    private async void buttonRechercher_Click_1(object sender, EventArgs e)
     {
         var startDate = ConvertToIso8601DateTime(dateTimePickerFirst.Value.ToString(CultureInfo.CurrentCulture));
         var endDate = ConvertToIso8601DateTime(dateTimePickerLast.Value.ToString(CultureInfo.CurrentCulture));

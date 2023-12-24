@@ -39,18 +39,19 @@
             this.buttonPanier = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.spectaclesDataGridView = new System.Windows.Forms.DataGridView();
-            this.evenNom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.evenType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.evenDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.evenLieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.evenPlaces = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.evenPrix = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonNext = new System.Windows.Forms.Button();
             this.buttonPrevious = new System.Windows.Forms.Button();
             this.monthCalendar = new System.Windows.Forms.MonthCalendar();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.buttonRechercher = new System.Windows.Forms.Button();
             this.VilleSpectacleInput = new System.Windows.Forms.TextBox();
+            this.evenNom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.evenType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.evenDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.evenLieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.evenPlaces = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.evenPrix = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.evenImage = new System.Windows.Forms.DataGridViewImageColumn();
             this.panelAcceuil.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -153,7 +154,8 @@
             this.evenDate,
             this.evenLieu,
             this.evenPlaces,
-            this.evenPrix});
+            this.evenPrix,
+            this.evenImage});
             this.spectaclesDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.spectaclesDataGridView.Location = new System.Drawing.Point(0, 0);
             this.spectaclesDataGridView.Name = "spectaclesDataGridView";
@@ -161,6 +163,54 @@
             this.spectaclesDataGridView.RowTemplate.Height = 24;
             this.spectaclesDataGridView.Size = new System.Drawing.Size(740, 431);
             this.spectaclesDataGridView.TabIndex = 4;
+            // 
+            // buttonNext
+            // 
+            this.buttonNext.Location = new System.Drawing.Point(628, 466);
+            this.buttonNext.Name = "buttonNext";
+            this.buttonNext.Size = new System.Drawing.Size(47, 37);
+            this.buttonNext.TabIndex = 1;
+            this.buttonNext.Text = ">";
+            this.buttonNext.UseVisualStyleBackColor = true;
+            // 
+            // buttonPrevious
+            // 
+            this.buttonPrevious.Location = new System.Drawing.Point(48, 466);
+            this.buttonPrevious.Name = "buttonPrevious";
+            this.buttonPrevious.Size = new System.Drawing.Size(47, 37);
+            this.buttonPrevious.TabIndex = 0;
+            this.buttonPrevious.Text = "<";
+            this.buttonPrevious.UseVisualStyleBackColor = true;
+            // 
+            // monthCalendar
+            // 
+            this.monthCalendar.Location = new System.Drawing.Point(0, 288);
+            this.monthCalendar.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.monthCalendar.Name = "monthCalendar";
+            this.monthCalendar.TabIndex = 1;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // buttonRechercher
+            // 
+            this.buttonRechercher.Location = new System.Drawing.Point(77, 500);
+            this.buttonRechercher.Name = "buttonRechercher";
+            this.buttonRechercher.Size = new System.Drawing.Size(75, 23);
+            this.buttonRechercher.TabIndex = 8;
+            this.buttonRechercher.Text = "Rechercher";
+            this.buttonRechercher.UseVisualStyleBackColor = true;
+            this.buttonRechercher.Click += new System.EventHandler(this.buttonRechercher_Click_1);
+            // 
+            // VilleSpectacleInput
+            // 
+            this.VilleSpectacleInput.Location = new System.Drawing.Point(11, 217);
+            this.VilleSpectacleInput.Name = "VilleSpectacleInput";
+            this.VilleSpectacleInput.Size = new System.Drawing.Size(216, 23);
+            this.VilleSpectacleInput.TabIndex = 9;
             // 
             // evenNom
             // 
@@ -204,52 +254,10 @@
             this.evenPrix.Name = "evenPrix";
             this.evenPrix.Width = 125;
             // 
-            // buttonNext
+            // evenImage
             // 
-            this.buttonNext.Location = new System.Drawing.Point(628, 466);
-            this.buttonNext.Name = "buttonNext";
-            this.buttonNext.Size = new System.Drawing.Size(47, 37);
-            this.buttonNext.TabIndex = 1;
-            this.buttonNext.Text = ">";
-            this.buttonNext.UseVisualStyleBackColor = true;
-            // 
-            // buttonPrevious
-            // 
-            this.buttonPrevious.Location = new System.Drawing.Point(48, 466);
-            this.buttonPrevious.Name = "buttonPrevious";
-            this.buttonPrevious.Size = new System.Drawing.Size(47, 37);
-            this.buttonPrevious.TabIndex = 0;
-            this.buttonPrevious.Text = "<";
-            this.buttonPrevious.UseVisualStyleBackColor = true;
-            // 
-            // monthCalendar
-            // 
-            this.monthCalendar.Location = new System.Drawing.Point(0, 288);
-            this.monthCalendar.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
-            this.monthCalendar.Name = "monthCalendar";
-            this.monthCalendar.TabIndex = 1;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // buttonRechercher
-            // 
-            this.buttonRechercher.Location = new System.Drawing.Point(77, 500);
-            this.buttonRechercher.Name = "buttonRechercher";
-            this.buttonRechercher.Size = new System.Drawing.Size(75, 23);
-            this.buttonRechercher.TabIndex = 8;
-            this.buttonRechercher.Text = "Rechercher";
-            this.buttonRechercher.UseVisualStyleBackColor = true;
-            // 
-            // VilleSpectacleInput
-            // 
-            this.VilleSpectacleInput.Location = new System.Drawing.Point(11, 217);
-            this.VilleSpectacleInput.Name = "VilleSpectacleInput";
-            this.VilleSpectacleInput.Size = new System.Drawing.Size(216, 23);
-            this.VilleSpectacleInput.TabIndex = 9;
+            this.evenImage.HeaderText = "Image";
+            this.evenImage.Name = "evenImage";
             // 
             // formEvenem
             // 
@@ -283,13 +291,14 @@
         private Panel panel2;
         private Button buttonPanier;
         private DataGridView spectaclesDataGridView;
+        private Button buttonRechercher;
+        private TextBox VilleSpectacleInput;
         private DataGridViewTextBoxColumn evenNom;
         private DataGridViewTextBoxColumn evenType;
         private DataGridViewTextBoxColumn evenDate;
         private DataGridViewTextBoxColumn evenLieu;
         private DataGridViewTextBoxColumn evenPlaces;
         private DataGridViewTextBoxColumn evenPrix;
-        private Button buttonRechercher;
-        private TextBox VilleSpectacleInput;
+        private DataGridViewImageColumn evenImage;
     }
 }
