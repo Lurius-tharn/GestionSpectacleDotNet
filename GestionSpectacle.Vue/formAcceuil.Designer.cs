@@ -100,19 +100,20 @@
             // panierToolStripMenuItem
             // 
             this.panierToolStripMenuItem.Name = "panierToolStripMenuItem";
-            this.panierToolStripMenuItem.Size = new System.Drawing.Size(205, 34);
+            this.panierToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.panierToolStripMenuItem.Text = "Panier";
+            this.panierToolStripMenuItem.Click += new System.EventHandler(this.panierToolStripMenuItem_Click_1);
             // 
             // reservationToolStripMenuItem
             // 
             this.reservationToolStripMenuItem.Name = "reservationToolStripMenuItem";
-            this.reservationToolStripMenuItem.Size = new System.Drawing.Size(205, 34);
+            this.reservationToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.reservationToolStripMenuItem.Text = "Reservation";
             // 
             // historiqueToolStripMenuItem
             // 
             this.historiqueToolStripMenuItem.Name = "historiqueToolStripMenuItem";
-            this.historiqueToolStripMenuItem.Size = new System.Drawing.Size(205, 34);
+            this.historiqueToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.historiqueToolStripMenuItem.Text = "Historique";
             // 
             // evenementsToolStripMenuItem
@@ -141,7 +142,7 @@
             // aProposToolStripMenuItem
             // 
             this.aProposToolStripMenuItem.Name = "aProposToolStripMenuItem";
-            this.aProposToolStripMenuItem.Size = new System.Drawing.Size(189, 34);
+            this.aProposToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.aProposToolStripMenuItem.Text = "A propos";
             // 
             // contextMenuStrip1
@@ -163,13 +164,13 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(604, 61);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(524, 58);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(205, 55);
+            this.label3.Size = new System.Drawing.Size(380, 113);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Accueuil";
+            this.label3.Text = "Accueil";
             // 
             // Acceuil
             // 

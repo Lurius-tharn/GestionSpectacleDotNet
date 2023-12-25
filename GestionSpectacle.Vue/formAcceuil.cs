@@ -13,13 +13,14 @@ public partial class Acceuil : Form
 
     private UserControl activeControl;
     private Panel mainPanel;
-
+    private formPanier _formPanier;
     public Acceuil()
     {
         InitializeComponent();
         formInscription = new formInscription();
         _formConnexion = new FormConnexion();
         _formEvenem = new formEvenem();
+        _formPanier = new formPanier(); 
     }
 
 
@@ -45,10 +46,9 @@ public partial class Acceuil : Form
 
     private void ShowFormInPanel(Form formToShow)
     {
-        // Effacez le contenu actuel du panel
+    
         panelAcceuil.Controls.Clear();
 
-        // Ajoutez le nouveau formulaire au panel
         formToShow.TopLevel = false;
         formToShow.FormBorderStyle = FormBorderStyle.None;
         formToShow.Dock = DockStyle.Fill;
@@ -97,5 +97,10 @@ public partial class Acceuil : Form
     private void rechercherDesEvenementsToolStripMenuItem_Click(object sender, EventArgs e)
     {
         ShowFormInPanel(_formEvenem);
+    }
+
+    private void panierToolStripMenuItem_Click_1(object sender, EventArgs e)
+    {
+
     }
 }

@@ -57,31 +57,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="evenNom.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="evenType.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="evenDate.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="evenLieu.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="evenPlaces.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="evenPrix.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="evenImage.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="evenConsult.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="contextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>474, 17</value>
-  </metadata>
+  <data name="descriptionTextLabel.Text" xml:space="preserve">
+    <value>Concert hommage à l’œuvre de Hans Zimmer « Le Roi Lion » , « Dune », « Top Gun », « Pirates des Caraïbes », « Gladiator », « The Dark Knight », « Man of Steel », « Spiderman », « Inception », « Interstellar », « Dunkerque » et plus encore … ! Hans Zimmer est reconnu mondialement comme l’un des talents musicaux les plus innovants d’Hollywood. Aucun autre compositeur n’a autant influencé le monde du cinéma au cours des deux dernières décennies. Ses compositions bouleversantes pour des films tel que : « Le Roi Lion » , « Dune », « Top Gun », « Pirates des Caraïbes », « Gladiator », « The Dark Knight », « Man of Steel », « Spiderman », « Inception » et « Interstellar » lui valurent plusieurs nominations aux Oscars, Globes et Emmys. Venez vivre durant 2 heures, un concert riche en émotions, présenté par un pirate original de « Pirates des Caraïbes ». Une rétrospective symphonique sur les plus beaux moments du cinéma, interprétés par The Hollywood Film Orchestra &amp; Chœur et solistes vedettes</value>
+  </data>
 </root>
