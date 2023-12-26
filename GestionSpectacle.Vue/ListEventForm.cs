@@ -30,7 +30,6 @@ public partial class ListEventForm : Form
         {
             var dynamicEvent = evenement;
 
-            // Stocker l'ensemble des détails de l'événement
             var eventDetails = ticketMasterApi.SetEventDetail(dynamicEvent);
 
             storedEvents.Add(eventDetails);
@@ -45,6 +44,7 @@ public partial class ListEventForm : Form
                 eventDetails.StartDate,
                 eventDetails.Venue,
                 eventDetails.nbPlacesMax,
+                GetDisponibility(dynamicEvent),
                 eventDetails.Prix,
                 image.Image
             );

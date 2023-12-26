@@ -51,6 +51,7 @@
             this.evenDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.evenLieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.evenPlaces = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Statut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.evenPrix = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.evenImage = new System.Windows.Forms.DataGridViewImageColumn();
             this.evenConsult = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -196,6 +197,7 @@
             this.evenDate,
             this.evenLieu,
             this.evenPlaces,
+            this.Statut,
             this.evenPrix,
             this.evenImage,
             this.evenConsult});
@@ -277,6 +279,13 @@
             this.evenPlaces.MinimumWidth = 6;
             this.evenPlaces.Name = "evenPlaces";
             // 
+            // Statut
+            // 
+            this.Statut.HeaderText = "Statut";
+            this.Statut.MinimumWidth = 8;
+            this.Statut.Name = "Statut";
+            this.Statut.Width = 150;
+            // 
             // evenPrix
             // 
             this.evenPrix.HeaderText = "Prix";
@@ -340,6 +349,7 @@
         private DataGridViewTextBoxColumn evenDate;
         private DataGridViewTextBoxColumn evenLieu;
         private DataGridViewTextBoxColumn evenPlaces;
+        private DataGridViewTextBoxColumn Statut;
         private DataGridViewTextBoxColumn evenPrix;
         private DataGridViewImageColumn evenImage;
         private DataGridViewButtonColumn evenConsult;
