@@ -24,8 +24,11 @@ public class GestionnaireBillet
 
     public void ReserverBillets(Spectacle spectacle, int Idutilisateur, int nombreBillets)
     {
-        _context.Spectacles.Add(spectacle);
-        _context.SaveChanges();
+        if (GetSPectacleInDbByIdApi(spectacle.IdApi) is null)
+        {
+            _context.Spectacles.Add(spectacle);
+            _context.SaveChanges();
+        }
 
         var spectacleId = spectacle.Id;
 
@@ -56,6 +59,17 @@ public class GestionnaireBillet
         _context.SaveChanges();
 
         Console.WriteLine("Réservation annulée avec succès.");
+    }
+
+    public bool VerifierDisponibiliteTickets(string idAPI)
+    {
+        var spectacle = GetSPectacleInDbByIdApi(idAPI);
+        return spectacle == null || spectacle.NbPlace > 0;
+    }
+
+    public Spectacle GetSPectacleInDbByIdApi(string idAPI)
+    {
+        return _context.Spectacles.FirstOrDefault(s => s.IdApi == idAPI);
     }
 }
 

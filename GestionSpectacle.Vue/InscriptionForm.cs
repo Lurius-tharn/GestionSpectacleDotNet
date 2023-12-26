@@ -29,10 +29,6 @@ public partial class InscriptionForm : Form
     }
 
 
-    private void buttonInscription_Click(object sender, EventArgs e)
-    {
-    }
-
     private void label5_Click(object sender, EventArgs e)
     {
     }
@@ -40,25 +36,56 @@ public partial class InscriptionForm : Form
     private void textBox5_TextChanged(object sender, EventArgs e)
     {
     }
-
-    private void user_Name_Validating(object sender, CancelEventArgs e)
+    private void userNameInput_Validating(object sender, CancelEventArgs e)
     {
         if (string.IsNullOrWhiteSpace(userNameInput.Text))
         {
+            errorProviderApp.SetError(userNameInput, "Inscrivez un nom valide (sans caractères spéciaux) !");
             e.Cancel = true;
-            userNameInput.Focus();
-            errorProviderApp.SetError(userNameInput, "Inscrivez un nom !");
         }
         else
         {
-            e.Cancel = false;
             errorProviderApp.SetError(userNameInput, "");
+            e.Cancel = false;
         }
     }
 
-    private void textBox1_TextChanged(object sender, EventArgs e)
+    private void ValidatePassword(object sender, CancelEventArgs e)
     {
+        TextBox passwordTextBox = (TextBox)sender;
+
+        if (string.IsNullOrWhiteSpace(passwordTextBox.Text))
+        {
+            errorProviderApp.SetError(passwordTextBox, "Le mot de passe ne peut pas être vide !");
+            e.Cancel = true;
+        }
+        else
+        {
+            errorProviderApp.SetError(passwordTextBox, "");
+            e.Cancel = false;
+
+            // Déplacer le focus vers le contrôle suivant
+            SelectNextControl(passwordTextBox, true, true, true, true);
+        }
     }
+
+    private void ValidatePasswordConfirmation(object sender, CancelEventArgs e)
+    {
+        if (passwordnput.Text != passwordComfirmInput.Text)
+        {
+            errorProviderApp.SetError(passwordComfirmInput, "Les mots de passe ne correspondent pas !");
+            e.Cancel = true;
+        }
+        else
+        {
+            errorProviderApp.SetError(passwordComfirmInput, "");
+            e.Cancel = false;
+
+            // Déplacer le focus vers le contrôle suivant
+            SelectNextControl(passwordComfirmInput, true, true, true, true);
+        }
+    }
+
 
     private void buttonInscription_Click_1(object sender, EventArgs e)
     {
@@ -87,7 +114,7 @@ public partial class InscriptionForm : Form
 
             _myDbContext.SaveChanges();
 
-            MessageBox.Show("Inscription r�ussie !");
+            MessageBox.Show("Inscription réussie !");
             UserSingleton.Instance.SetUtilisateurInfo(user.Id, user.UserName);
             if (stayConnectedCheckBox.Checked)
             {
@@ -101,49 +128,5 @@ public partial class InscriptionForm : Form
 
             Close();
         }
-    }
-
-    private void label6_Click(object sender, EventArgs e)
-    {
-    }
-
-    private void stayConnectedCheckBox_CheckedChanged(object sender, EventArgs e)
-    {
-    }
-
-    private void NameInput_TextChanged(object sender, EventArgs e)
-    {
-    }
-
-    private void passwordComfirmInput_TextChanged(object sender, EventArgs e)
-    {
-    }
-
-    private void passwordnput_TextChanged(object sender, EventArgs e)
-    {
-    }
-
-    private void userNameInput_TextChanged(object sender, EventArgs e)
-    {
-    }
-
-    private void buttonInscription_Click_2(object sender, EventArgs e)
-    {
-    }
-
-    private void label5_Click_1(object sender, EventArgs e)
-    {
-    }
-
-    private void label3_Click(object sender, EventArgs e)
-    {
-    }
-
-    private void label2_Click(object sender, EventArgs e)
-    {
-    }
-
-    private void label1_Click(object sender, EventArgs e)
-    {
     }
 }

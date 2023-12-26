@@ -30,7 +30,7 @@ public partial class ListEventForm : Form
         {
             var dynamicEvent = evenement;
 
-            var eventDetails = ticketMasterApi.SetEventDetail(dynamicEvent);
+            EventDetail eventDetails = ticketMasterApi.SetEventDetail(dynamicEvent);
 
             storedEvents.Add(eventDetails);
 
@@ -44,16 +44,11 @@ public partial class ListEventForm : Form
                 eventDetails.StartDate,
                 eventDetails.Venue,
                 eventDetails.nbPlacesMax,
-                GetDisponibility(dynamicEvent),
+                eventDetails.Status,
                 eventDetails.Prix,
                 image.Image
             );
         }
-    }
-
-    private static string GetDisponibility(dynamic dynamicEvent)
-    {
-        return dynamicEvent.dates.status.code == "onsale" ? "Disponible" : "Non disponible";
     }
 
 
@@ -82,10 +77,10 @@ public partial class ListEventForm : Form
 
     private void spectaclesDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
     {
-        if (e.ColumnIndex == spectaclesDataGridView.Columns["evenConsult"]!.Index)
+        if (e.ColumnIndex > 0 && e.ColumnIndex == spectaclesDataGridView.Columns["evenConsult"]!.Index)
         {
             var selectedEventDetails = storedEvents[e.RowIndex];
-
+            eventForm.DisableActions(true);
             eventForm.DisplayEventInfo(selectedEventDetails);
         }
     }

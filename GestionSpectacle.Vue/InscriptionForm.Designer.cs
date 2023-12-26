@@ -64,143 +64,131 @@
             this.panelAcceuil.Controls.Add(this.label3);
             this.panelAcceuil.Controls.Add(this.label2);
             this.panelAcceuil.Controls.Add(this.label1);
-            this.panelAcceuil.Location = new System.Drawing.Point(3, 14);
-            this.panelAcceuil.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panelAcceuil.Location = new System.Drawing.Point(2, 8);
             this.panelAcceuil.Name = "panelAcceuil";
-            this.panelAcceuil.Size = new System.Drawing.Size(1453, 1065);
+            this.panelAcceuil.Size = new System.Drawing.Size(1017, 639);
             this.panelAcceuil.TabIndex = 20;
             // 
             // stayConnectedCheckBox
             // 
             this.stayConnectedCheckBox.AutoSize = true;
             this.stayConnectedCheckBox.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.stayConnectedCheckBox.Location = new System.Drawing.Point(540, 566);
+            this.stayConnectedCheckBox.Location = new System.Drawing.Point(378, 340);
+            this.stayConnectedCheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.stayConnectedCheckBox.Name = "stayConnectedCheckBox";
-            this.stayConnectedCheckBox.Size = new System.Drawing.Size(251, 42);
+            this.stayConnectedCheckBox.Size = new System.Drawing.Size(171, 29);
             this.stayConnectedCheckBox.TabIndex = 23;
             this.stayConnectedCheckBox.Text = "Rester connecter";
             this.stayConnectedCheckBox.UseVisualStyleBackColor = true;
-            this.stayConnectedCheckBox.CheckedChanged += new System.EventHandler(this.stayConnectedCheckBox_CheckedChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(583, 63);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(408, 38);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(224, 54);
+            this.label6.Size = new System.Drawing.Size(155, 37);
             this.label6.TabIndex = 22;
             this.label6.Text = "Inscription";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // NameInput
             // 
             this.NameInput.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.NameInput.Location = new System.Drawing.Point(784, 389);
-            this.NameInput.Margin = new System.Windows.Forms.Padding(4);
+            this.NameInput.Location = new System.Drawing.Point(549, 233);
+            this.NameInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.NameInput.Name = "NameInput";
-            this.NameInput.Size = new System.Drawing.Size(298, 45);
+            this.NameInput.Size = new System.Drawing.Size(210, 32);
             this.NameInput.TabIndex = 21;
-            this.NameInput.TextChanged += new System.EventHandler(this.NameInput_TextChanged);
             // 
             // passwordComfirmInput
             // 
             this.passwordComfirmInput.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.passwordComfirmInput.Location = new System.Drawing.Point(784, 329);
-            this.passwordComfirmInput.Margin = new System.Windows.Forms.Padding(4);
+            this.passwordComfirmInput.Location = new System.Drawing.Point(549, 197);
+            this.passwordComfirmInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.passwordComfirmInput.Name = "passwordComfirmInput";
-            this.passwordComfirmInput.Size = new System.Drawing.Size(298, 45);
+            this.passwordComfirmInput.Size = new System.Drawing.Size(210, 32);
             this.passwordComfirmInput.TabIndex = 20;
-            this.passwordComfirmInput.TextChanged += new System.EventHandler(this.passwordComfirmInput_TextChanged);
+            this.passwordComfirmInput.Validating += new System.ComponentModel.CancelEventHandler(this.ValidatePasswordConfirmation);
             // 
             // passwordnput
             // 
             this.passwordnput.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.passwordnput.Location = new System.Drawing.Point(784, 258);
-            this.passwordnput.Margin = new System.Windows.Forms.Padding(4);
+            this.passwordnput.Location = new System.Drawing.Point(549, 155);
+            this.passwordnput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.passwordnput.Name = "passwordnput";
-            this.passwordnput.Size = new System.Drawing.Size(298, 45);
+            this.passwordnput.Size = new System.Drawing.Size(210, 32);
             this.passwordnput.TabIndex = 19;
-            this.passwordnput.TextChanged += new System.EventHandler(this.passwordnput_TextChanged);
+            this.passwordnput.Validating += new System.ComponentModel.CancelEventHandler(this.ValidatePassword);
             // 
             // userNameInput
             // 
             this.userNameInput.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.userNameInput.Location = new System.Drawing.Point(784, 187);
-            this.userNameInput.Margin = new System.Windows.Forms.Padding(4);
+            this.userNameInput.Location = new System.Drawing.Point(549, 112);
+            this.userNameInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.userNameInput.Name = "userNameInput";
-            this.userNameInput.Size = new System.Drawing.Size(298, 45);
+            this.userNameInput.Size = new System.Drawing.Size(210, 32);
             this.userNameInput.TabIndex = 18;
-            this.userNameInput.TextChanged += new System.EventHandler(this.userNameInput_TextChanged);
+            this.userNameInput.Validating += new System.ComponentModel.CancelEventHandler(this.userNameInput_Validating);
             // 
             // buttonInscription
             // 
             this.buttonInscription.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonInscription.Location = new System.Drawing.Point(364, 558);
-            this.buttonInscription.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonInscription.Location = new System.Drawing.Point(255, 335);
+            this.buttonInscription.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonInscription.Name = "buttonInscription";
-            this.buttonInscription.Size = new System.Drawing.Size(169, 56);
+            this.buttonInscription.Size = new System.Drawing.Size(118, 34);
             this.buttonInscription.TabIndex = 17;
             this.buttonInscription.Text = "S\'inscrire";
             this.buttonInscription.UseVisualStyleBackColor = true;
-            this.buttonInscription.Click += new System.EventHandler(this.buttonInscription_Click_2);
+            this.buttonInscription.Click += new System.EventHandler(this.buttonInscription_Click_1);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(402, 378);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(281, 227);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 38);
+            this.label5.Size = new System.Drawing.Size(56, 25);
             this.label5.TabIndex = 16;
             this.label5.Text = "Nom";
-            this.label5.Click += new System.EventHandler(this.label5_Click_1);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(402, 318);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(281, 191);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(331, 38);
+            this.label3.Size = new System.Drawing.Size(224, 25);
             this.label3.TabIndex = 15;
             this.label3.Text = "Confirmer mot de passe";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(402, 247);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(281, 148);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(191, 38);
+            this.label2.Size = new System.Drawing.Size(129, 25);
             this.label2.TabIndex = 14;
             this.label2.Text = "Mot de passe";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(402, 176);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(281, 106);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(248, 38);
+            this.label1.Size = new System.Drawing.Size(168, 25);
             this.label1.TabIndex = 13;
             this.label1.Text = "Nom d\'utilisateur";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // InscriptionForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1445, 978);
+            this.ClientSize = new System.Drawing.Size(1012, 548);
             this.Controls.Add(this.panelAcceuil);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "InscriptionForm";
             this.Text = "formInscription";
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderApp)).EndInit();

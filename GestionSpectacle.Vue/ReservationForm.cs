@@ -69,7 +69,7 @@ public partial class ReservationForm : Form
 
     private async void reservationDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
     {
-        if (e.ColumnIndex == reservationDataGridView?.Columns["CancelButton"]?.Index)
+        if (e.ColumnIndex > 0 && e.ColumnIndex == reservationDataGridView?.Columns["CancelButton"]?.Index)
         {
             var selectedRow = reservationDataGridView.Rows[e.RowIndex];
             var tag = selectedRow.Tag as dynamic;
@@ -90,9 +90,8 @@ public partial class ReservationForm : Form
                 }
             }
         }
-        else if (e.ColumnIndex == reservationDataGridView?.Columns["evenConsult"]?.Index)
+        else if (e.ColumnIndex > 0 && e.ColumnIndex == reservationDataGridView?.Columns["evenConsult"]?.Index)
         {
-
             var selectedRow = reservationDataGridView.Rows[e.RowIndex];
             var tag = selectedRow.Tag as dynamic;
 
@@ -103,6 +102,7 @@ public partial class ReservationForm : Form
                 var dynamicEvent = await _ticketMasterApi.GetEventDetailsAsync(spectacleIdApi);
                 var eventDetail = _ticketMasterApi.SetEventDetail(dynamicEvent);
                 eventForm.DisplayEventInfo(eventDetail);
+                eventForm.DisableActions(false);
                 eventForm.Show();
             }
         }

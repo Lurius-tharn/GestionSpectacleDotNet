@@ -21,6 +21,21 @@ public partial class EventForm : Form
         promotorLabel.Text = eventDetail.MainPromotor;
         classificationLabel.Text = eventDetail.MainClassification;
         startDateLabel.Text = eventDetail.StartDate;
+        nbPlaceMaxLabel.Text = eventDetail.nbPlacesMax.ToString();
+        if (eventDetail.nbPlacesMax == 0)
+        {
+            nbPlacesNumericUpDown.Minimum = 0;
+            nbPlacesNumericUpDown.Enabled = false;
+            placeInfoLabel.Text = "( Il n'y as actuellement pas de places disponibles) ";
+            buttonPanier.Enabled = false;
+        }
+
+        else
+        {
+            nbPlacesNumericUpDown.Maximum = eventDetail.nbPlacesMax;
+            placeInfoLabel.Text = $"Vous pouvez prendre {eventDetail.nbPlacesMax} places";
+        }
+
         ShowDialog();
     }
 
@@ -36,5 +51,11 @@ public partial class EventForm : Form
         CartManager.AjouterAuPanier(eventDetail);
 
         MessageBox.Show($"Spectacle {eventDetail.Name} a été ajouté au panier !");
+    }
+
+    public void DisableActions(bool disable)
+    {
+        buttonPanier.Enabled = disable;
+        nbPlacesNumericUpDown.Enabled = disable;
     }
 }

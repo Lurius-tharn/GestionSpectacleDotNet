@@ -69,4 +69,15 @@ public partial class AcceuilForm : Form
 
         FormUtilities.ShowFormInPanel(panelAcceuil, reservationForm);
     }
+
+    private void seDéconnecterToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+
+        Settings.Default.UserId = 0;
+        Settings.Default.UserName = null;
+        Settings.Default.isConnected = false;
+        Settings.Default.Save();
+        Application.Exit();
+
+    }
 }
