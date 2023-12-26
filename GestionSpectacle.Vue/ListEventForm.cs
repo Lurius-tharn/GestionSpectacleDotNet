@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace WindowsFormsApp1;
 
-public partial class formEvenem : Form
+public partial class ListEventForm : Form
 {
     private readonly string apiKey = "DdPB8GMtZ2bCJYNiH1pj48zEs1dN98gI";
     private readonly string classification = "Concert";
@@ -13,9 +13,8 @@ public partial class formEvenem : Form
     private readonly Stack<Form> formStack = new();
     private readonly List<EventDetail> storedEvents;
     private dynamic cachedEvents;
-    private string city = "Paris";
 
-    public formEvenem()
+    public ListEventForm()
     {
         InitializeComponent();
         storedEvents = new List<EventDetail>();
@@ -23,18 +22,6 @@ public partial class formEvenem : Form
         eventForm.SetFormParent(this);
     }
 
-    private void ShowFormInPanel(Form formToShow)
-    {
-        panelAcceuil.Controls.Clear();
-
-        formToShow.TopLevel = false;
-        formToShow.FormBorderStyle = FormBorderStyle.None;
-        formToShow.Dock = DockStyle.Fill;
-        panelAcceuil.Controls.Add(formToShow);
-        formToShow.Show();
-
-        formStack.Push(formToShow);
-    }
 
     private string ConvertToIso8601DateTime(string inputDate)
     {
@@ -64,14 +51,18 @@ public partial class formEvenem : Form
                 Type = dynamicEvent.type,
                 StartDate = dynamicEvent.dates.start.localDate,
                 Venue = dynamicEvent._embedded.venues[0].name,
-                Status = dynamicEvent.dates.status.code == "onsale" ? "Disponible" : "Non disponible",
+                Status = GetDisponibility(dynamicEvent),
                 ImageUrl = dynamicEvent.images[0].url,
-                Description = dynamicEvent?.description ?? string.Empty
+                Description = dynamicEvent?.description ?? string.Empty,
+                Places = dynamicEvent?._embedded.venues[0].upcomingEvents._total,
+                Prix = dynamicEvent?.priceRanges[0].min,
+                MainClassification = dynamicEvent?.classifications[0].genre.name,
+                MainPromotor = dynamicEvent?.promoter.name
             };
 
             storedEvents.Add(eventDetails);
 
-            var imageUrl = evenement.images[0].url; // Assurez-vous de gérer les cas où il y a plusieurs images
+            var imageUrl = evenement.images[0].url;
 
             var image = new PictureBox();
             image.Load(imageUrl.ToString());
@@ -80,11 +71,16 @@ public partial class formEvenem : Form
                 eventDetails.Type,
                 eventDetails.StartDate,
                 eventDetails.Venue,
-                eventDetails.Status,
-                eventDetails.StartDate,
+                eventDetails.Places,
+                eventDetails.Prix,
                 image.Image
             );
         }
+    }
+
+    private static string GetDisponibility(dynamic dynamicEvent)
+    {
+        return dynamicEvent.dates.status.code == "onsale" ? "Disponible" : "Non disponible";
     }
 
 
@@ -108,7 +104,7 @@ public partial class formEvenem : Form
                      $"&endDateTime={endDate}" +
                      "&locale=fr" +
                      "&sort=date,asc";
-        // TODO : garder ce resultat en storage afin d'éviter les appels api des qu'on retourne sur cette page
+
 
         using (var client = new HttpClient())
         {
@@ -142,8 +138,6 @@ public partial class formEvenem : Form
             var selectedEventDetails = storedEvents[e.RowIndex];
 
             eventForm.DisplayEventInfo(selectedEventDetails);
-
-            eventForm.ShowDialog();
         }
     }
 }

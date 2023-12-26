@@ -2,20 +2,25 @@ namespace GestionSpectacle.Vue.utils;
 
 public class CartManager
 {
-    private static readonly List<EventDetail> cartItems = new();
+    private static List<EventDetail> _cartItems = new();
 
     public static void AjouterAuPanier(EventDetail item)
     {
-        cartItems.Add(item);
+        _cartItems.Add(item);
     }
 
     public static List<EventDetail> GetPanierItems()
     {
-        return cartItems;
+        return _cartItems;
     }
 
     public static double GetCartTotalPrice()
     {
-        return cartItems.Sum(detail => detail.Prix);
+        return _cartItems.Sum(detail => detail.Prix);
+    }
+
+    public static void ResetCart()
+    {
+        _cartItems = new List<EventDetail>();
     }
 }

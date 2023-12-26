@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class formReserv : Form
+    public partial class ReservationForm : Form
     {
-        public formReserv()
+        public ReservationForm()
         {
             InitializeComponent();
         }

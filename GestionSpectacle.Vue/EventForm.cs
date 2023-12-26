@@ -5,9 +5,10 @@ namespace GestionSpectacle.Vue;
 
 public partial class EventForm : Form
 {
+    private EventDetail eventDetail;
 
     private Form formParent;
-    private EventDetail eventDetail;
+
     public EventForm()
     {
         InitializeComponent();
@@ -15,26 +16,34 @@ public partial class EventForm : Form
 
     internal void DisplayEventInfo(EventDetail eventDetail)
     {
-
         this.eventDetail = eventDetail;
         eventNameLabel.Text = eventDetail.Name;
         descriptionTextLabel.Text = eventDetail.Description;
         spectaclePictureBox.Load(eventDetail.ImageUrl);
+        priceLabel.Text = eventDetail.Prix.ToString();
+        promotorLabel.Text = eventDetail.MainPromotor;
+        classificationLabel.Text = eventDetail.MainClassification;
+        startDateLabel.Text = eventDetail.StartDate;
+        ShowDialog();
     }
 
-    internal void SetFormParent(formEvenem formEvenem)
+    internal void SetFormParent(ListEventForm formEvenem)
     {
-        this.formParent = formEvenem;
+        formParent = formEvenem;
     }
 
     private void button1_Click(object sender, EventArgs e)
     {
-        formParent.Show();  
-        this.Close();
+        formParent.Show();
+        Close();
     }
 
     private void buttonPanier_Click(object sender, EventArgs e)
     {
+        eventDetail.Places += (int)nbPlacesNumericUpDown.Value;
 
+        CartManager.AjouterAuPanier(eventDetail);
+
+        MessageBox.Show($"Spectacle {eventDetail.Name} a été ajouté au panier !");
     }
 }

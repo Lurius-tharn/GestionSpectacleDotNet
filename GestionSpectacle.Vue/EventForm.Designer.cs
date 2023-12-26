@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EventForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.nbPlacesNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.buttonPanier = new System.Windows.Forms.Button();
             this.panelMain = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -37,9 +39,9 @@
             this.eventNameLabel = new System.Windows.Forms.Label();
             this.panelAcceuil = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
-            this.endDateLabel = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.nbPlaceMaxLabel = new System.Windows.Forms.Label();
             this.classificationLabel = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.promotorLabel = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -48,13 +50,11 @@
             this.spectaclePictureBox = new System.Windows.Forms.PictureBox();
             this.startDateLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.nbPlacesNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nbPlacesNumericUpDown)).BeginInit();
             this.panelMain.SuspendLayout();
             this.panelAcceuil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spectaclePictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nbPlacesNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -68,6 +68,33 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1061, 887);
             this.panel1.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(23, 744);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(202, 32);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Choix des places";
+            // 
+            // nbPlacesNumericUpDown
+            // 
+            this.nbPlacesNumericUpDown.Location = new System.Drawing.Point(33, 793);
+            this.nbPlacesNumericUpDown.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nbPlacesNumericUpDown.Name = "nbPlacesNumericUpDown";
+            this.nbPlacesNumericUpDown.Size = new System.Drawing.Size(180, 31);
+            this.nbPlacesNumericUpDown.TabIndex = 5;
+            this.nbPlacesNumericUpDown.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // buttonPanier
             // 
@@ -125,9 +152,9 @@
             // panelAcceuil
             // 
             this.panelAcceuil.Controls.Add(this.button1);
-            this.panelAcceuil.Controls.Add(this.endDateLabel);
-            this.panelAcceuil.Controls.Add(this.label11);
+            this.panelAcceuil.Controls.Add(this.nbPlaceMaxLabel);
             this.panelAcceuil.Controls.Add(this.classificationLabel);
+            this.panelAcceuil.Controls.Add(this.label5);
             this.panelAcceuil.Controls.Add(this.label9);
             this.panelAcceuil.Controls.Add(this.promotorLabel);
             this.panelAcceuil.Controls.Add(this.label7);
@@ -154,26 +181,15 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // endDateLabel
+            // nbPlaceMaxLabel
             // 
-            this.endDateLabel.AutoSize = true;
-            this.endDateLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.endDateLabel.Location = new System.Drawing.Point(44, 183);
-            this.endDateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.endDateLabel.Name = "endDateLabel";
-            this.endDateLabel.Size = new System.Drawing.Size(108, 25);
-            this.endDateLabel.TabIndex = 17;
-            this.endDateLabel.Text = "22/11/2000";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(4, 183);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(34, 25);
-            this.label11.TabIndex = 16;
-            this.label11.Text = "Au";
+            this.nbPlaceMaxLabel.AutoSize = true;
+            this.nbPlaceMaxLabel.Location = new System.Drawing.Point(4, 756);
+            this.nbPlaceMaxLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.nbPlaceMaxLabel.Name = "nbPlaceMaxLabel";
+            this.nbPlaceMaxLabel.Size = new System.Drawing.Size(32, 25);
+            this.nbPlaceMaxLabel.TabIndex = 15;
+            this.nbPlaceMaxLabel.Text = "50";
             // 
             // classificationLabel
             // 
@@ -184,6 +200,17 @@
             this.classificationLabel.Size = new System.Drawing.Size(80, 25);
             this.classificationLabel.TabIndex = 15;
             this.classificationLabel.Text = "Musique";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(-3, 714);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(229, 36);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "nombre de places";
             // 
             // label9
             // 
@@ -251,7 +278,7 @@
             // 
             this.startDateLabel.AutoSize = true;
             this.startDateLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.startDateLabel.Location = new System.Drawing.Point(44, 143);
+            this.startDateLabel.Location = new System.Drawing.Point(61, 143);
             this.startDateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.startDateLabel.Name = "startDateLabel";
             this.startDateLabel.Size = new System.Drawing.Size(108, 25);
@@ -264,36 +291,9 @@
             this.label1.Location = new System.Drawing.Point(4, 143);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 25);
+            this.label1.Size = new System.Drawing.Size(49, 25);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Du";
-            // 
-            // nbPlacesNumericUpDown
-            // 
-            this.nbPlacesNumericUpDown.Location = new System.Drawing.Point(33, 793);
-            this.nbPlacesNumericUpDown.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nbPlacesNumericUpDown.Name = "nbPlacesNumericUpDown";
-            this.nbPlacesNumericUpDown.Size = new System.Drawing.Size(180, 31);
-            this.nbPlacesNumericUpDown.TabIndex = 5;
-            this.nbPlacesNumericUpDown.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(33, 753);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(173, 25);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Nombres de places";
+            this.label1.Text = "Date";
             // 
             // EventForm
             // 
@@ -306,12 +306,12 @@
             this.Text = "EventForm";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nbPlacesNumericUpDown)).EndInit();
             this.panelMain.ResumeLayout(false);
             this.panelMain.PerformLayout();
             this.panelAcceuil.ResumeLayout(false);
             this.panelAcceuil.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spectaclePictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nbPlacesNumericUpDown)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -328,8 +328,6 @@
         private Label label3;
         private Label descriptionTextLabel;
         private PictureBox spectaclePictureBox;
-        private Label endDateLabel;
-        private Label label11;
         private Label classificationLabel;
         private Label label9;
         private Label promotorLabel;
@@ -339,5 +337,7 @@
         private Button button1;
         private Label label2;
         private NumericUpDown nbPlacesNumericUpDown;
+        private Label nbPlaceMaxLabel;
+        private Label label5;
     }
 }

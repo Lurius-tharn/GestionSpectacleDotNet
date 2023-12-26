@@ -12,4 +12,8 @@ public class EventDetail
     public string ImageUrl { get; set; }
     public string Description { get; set; }
     public double Prix { get; set; }
+    public int Places { get; set; }
+
+    public string MainPromotor { get; set; }
+    public string MainClassification { get; set; }
 }
