@@ -52,6 +52,9 @@ public partial class MyDbContext : DbContext
             entity.Property(e => e.Statut)
                 .HasMaxLength(36)
                 .HasColumnName("statut");
+            entity.Property(e => e.numeroBillet)
+                .HasColumnName("numeroBillet");
+
 
             entity.HasOne(d => d.IdSpectacleNavigation)
                 .WithMany()
@@ -85,6 +88,15 @@ public partial class MyDbContext : DbContext
             entity.Property(e => e.Titre)
                 .HasMaxLength(36)
                 .HasColumnName("titre");
+
+            entity.Property(e => e.imageUrl)
+                .HasColumnName("imageUrl");
+
+            entity.Property(e => e.IdApi)
+                .HasColumnName("IdApi");
+
+            entity.Property(e => e.Type)
+                .HasColumnName("Type");
         });
 
         modelBuilder.Entity<Utilisateur>(entity =>

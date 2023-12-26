@@ -1,35 +1,88 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using GestionSpectacle.DAL.Context;
+using GestionSpectacle.Data;
+using GestionSpectacle.Vue.utils;
+using Microsoft.EntityFrameworkCore;
 
-namespace WindowsFormsApp1
+namespace WindowsFormsApp1;
+
+public partial class ReservationForm : Form
 {
-    public partial class ReservationForm : Form
+    private MyDbContext _myDbContext;
+    private GestionnaireBillet gestionnaireBillet;
+
+    public ReservationForm()
     {
-        public ReservationForm()
+        InitializeComponent();
+    }
+
+    protected override void OnLoad(EventArgs e)
+    {
+        base.OnLoad(e);
+        _myDbContext = new MyDbContext();
+        _myDbContext.Utilisateurs.Load();
+        _myDbContext.Billets.Load();
+        _myDbContext.Spectacles.Load();
+        gestionnaireBillet = new GestionnaireBillet();
+        FillDataGridView();
+    }
+
+    private void FillDataGridView()
+    {
+        reservationDataGridView.Rows.Clear();
+
+
+        _myDbContext.Billets.Where(billet => billet.IdUtilisateur == UserSingleton.Instance.UtilisateurId)
+            .ToList()
+            .ForEach(billet =>
+            {
+                // C comment le nb de place, faut faire le count 
+                var imageUrl = billet.IdSpectacleNavigation.imageUrl;
+
+                var image = new PictureBox();
+                image.Load(imageUrl);
+                var row = reservationDataGridView.Rows.Add(
+                    billet.Id,
+                    billet.IdSpectacleNavigation.Titre,
+                    billet.numeroBillet,
+                    billet.IdSpectacleNavigation.Type,
+                    billet.IdSpectacleNavigation.Date,
+                    billet.IdSpectacleNavigation.Lieu,
+                    billet.IdSpectacleNavigation.NbPlace,
+                    image.Image
+                );
+
+                // Stocker toutes les informations dans la propriété Tag de la ligne
+                reservationDataGridView.Rows[row].Tag = new
+                {
+                    BilletId = billet,
+                    SpectacleId = billet.IdSpectacleNavigation
+                    // Ajoutez d'autres propriétés selon vos besoins
+                };
+            });
+    }
+
+    private void reservationDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+    {
+        if (e.ColumnIndex == reservationDataGridView?.Columns["CancelButton"]?.Index)
         {
-            InitializeComponent();
-        }
+            var selectedRow = reservationDataGridView.Rows[e.RowIndex];
+            var tag = selectedRow.Tag as dynamic;
 
-        private void button1_Click(object sender, EventArgs e)
-        {
+            if (tag != null)
+            {
+                var billetId = tag.BilletId;
+                var spectacleId = tag.SpectacleId;
 
-        }
+                var resultat = MessageBox.Show("Voulez-vous ANNULER VOS RESERVATIONS ? VOUS NE SEREZ PAS REMBOURSÉ",
+                    "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
+                if (resultat == DialogResult.Yes)
+                {
+                    gestionnaireBillet.AnnulerReservation(billetId, spectacleId);
 
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+                    reservationDataGridView.Rows.Remove(selectedRow);
+                }
+            }
         }
     }
 }

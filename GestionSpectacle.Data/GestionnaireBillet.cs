@@ -1,12 +1,11 @@
 using GestionSpectacle.DAL.Context;
 using GestionSpectacle.DAL.Entities;
-using Microsoft.EntityFrameworkCore;
 
 namespace GestionSpectacle.Data;
 
 public delegate void AnnulationBilletDelegate(Billet billet, Spectacle spectacle);
 
-public delegate void ReservationDelegate(Spectacle spectacle, Utilisateur utilisateur, int nombreBillets);
+public delegate void ReservationDelegate(Spectacle spectacle, int utilisateur, int nombreBillets);
 
 public class GestionnaireBillet
 {
@@ -23,33 +22,35 @@ public class GestionnaireBillet
         AnnulerReservationDelegate = AnnulerReservation;
     }
 
-    public void ReserverBillets(Spectacle spectacle, Utilisateur utilisateur, int nombreBillets)
+    public void ReserverBillets(Spectacle spectacle, int Idutilisateur, int nombreBillets)
     {
+        _context.Spectacles.Add(spectacle);
+        _context.SaveChanges();
+
+        var spectacleId = spectacle.Id;
+
         if (spectacle.NbPlace >= nombreBillets)
-        {
-            var billet = new Billet
+            for (var i = 1; i <= nombreBillets; i++)
             {
-                IdSpectacle = spectacle.Id,
-                IdUtilisateur = utilisateur.Id,
-                Statut = ReservationStatus.Reserve.ToString()
-            };
+                var billet = new Billet
+                {
+                    IdSpectacle = spectacleId,
+                    IdUtilisateur = Idutilisateur,
+                    Statut = ReservationStatus.Reserve.ToString(),
+                    numeroBillet = i
+                };
 
-            _context.Billets.Add(billet);
-            spectacle.NbPlace -= nombreBillets;
-            _context.Spectacles.Update(spectacle);
-            _context.SaveChanges();
-
-
-            Console.WriteLine($"Réservation réussie pour le spectacle {spectacle.Titre} le {spectacle.Date}.");
-        }
+                _context.Billets.Add(billet);
+                spectacle.NbPlace -= nombreBillets;
+                _context.Spectacles.Update(spectacle);
+                _context.SaveChanges();
+                Console.WriteLine($"Réservation réussie pour le spectacle {spectacle.Titre} le {spectacle.Date}.");
+            }
     }
 
     public void AnnulerReservation(Billet billet, Spectacle spectacle)
     {
-        _context.Entry(billet).State = EntityState.Detached;
-
         _context.Billets.Remove(billet);
-
         ++spectacle.NbPlace;
         _context.Spectacles.Update(spectacle);
         _context.SaveChanges();

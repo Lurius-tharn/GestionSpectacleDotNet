@@ -40,7 +40,7 @@ public partial class EventForm : Form
 
     private void buttonPanier_Click(object sender, EventArgs e)
     {
-        eventDetail.Places += (int)nbPlacesNumericUpDown.Value;
+        eventDetail.nbPlaces += (int)nbPlacesNumericUpDown.Value;
 
         CartManager.AjouterAuPanier(eventDetail);
 

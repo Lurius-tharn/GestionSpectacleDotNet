@@ -12,6 +12,9 @@ public class Spectacle
     public string? Date { get; set; }
     public string? Lieu { get; set; }
     public int? NbPlace { get; set; }
+    public string imageUrl { get; set; }
+    public string IdApi { get; set; }
+    public string Type { get; set; }
 
 
     public override string ToString()

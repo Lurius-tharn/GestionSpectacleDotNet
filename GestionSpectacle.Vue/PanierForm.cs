@@ -1,6 +1,7 @@
 ﻿using System.Globalization;
 using GestionSpectacle.DAL.Context;
 using GestionSpectacle.DAL.Entities;
+using GestionSpectacle.Data;
 using GestionSpectacle.Vue.utils;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,6 +9,7 @@ namespace GestionSpectacle.Vue;
 
 public partial class PanierForm : Form
 {
+    private GestionnaireBillet _gestionnaireBillet;
     private MyDbContext _myDbContext;
 
     public PanierForm()
@@ -22,6 +24,7 @@ public partial class PanierForm : Form
         _myDbContext.Utilisateurs.Load();
         _myDbContext.Billets.Load();
         _myDbContext.Spectacles.Load();
+        _gestionnaireBillet = new GestionnaireBillet();
     }
 
 
@@ -39,7 +42,7 @@ public partial class PanierForm : Form
                     eventDetails.Name,
                     eventDetails.StartDate,
                     eventDetails.Type,
-                    eventDetails.Places,
+                    eventDetails.nbPlaces,
                     eventDetails.Venue,
                     eventDetails.Prix
                 );
@@ -63,21 +66,14 @@ public partial class PanierForm : Form
                 {
                     Titre = eventDetails.Name,
                     Date = eventDetails.StartDate,
-                    NbPlace = eventDetails.Places
+                    NbPlace = eventDetails.nbPlacesMax,
+                    imageUrl = eventDetails.ImageUrl,
+                    Lieu = eventDetails.Venue,
+                    Type = eventDetails.Type,
+                    IdApi = eventDetails.IdApi
                 };
-                _myDbContext.Spectacles.Add(spectacle);
-                _myDbContext.SaveChanges();
-
-                var spectacleId = spectacle.Id;
-
-                _myDbContext.Billets.Add(new Billet
-                {
-                    Statut = eventDetails.Status,
-                    IdSpectacle = spectacleId,
-                    IdUtilisateur = UserSingleton.Instance.UtilisateurId
-                });
-
-                _myDbContext.SaveChanges();
+                _gestionnaireBillet.ReserverBillets(spectacle, UserSingleton.Instance.UtilisateurId,
+                    eventDetails.nbPlaces);
             }
 
         MessageBox.Show(

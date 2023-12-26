@@ -34,6 +34,7 @@
             this.acceuilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inscriptionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.connectionStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.seDéconnecterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.compteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reservationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,7 +47,6 @@
             this.panelAcceuil = new System.Windows.Forms.Panel();
             this.isConnectedTextLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.seDéconnecterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panelAcceuil.SuspendLayout();
             this.SuspendLayout();
@@ -79,16 +79,22 @@
             // inscriptionToolStripMenuItem
             // 
             this.inscriptionToolStripMenuItem.Name = "inscriptionToolStripMenuItem";
-            this.inscriptionToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.inscriptionToolStripMenuItem.Size = new System.Drawing.Size(237, 34);
             this.inscriptionToolStripMenuItem.Text = "Inscription";
             this.inscriptionToolStripMenuItem.Click += new System.EventHandler(this.inscriptionToolStripMenuItem_Click_1);
             // 
             // connectionStripMenuItem1
             // 
             this.connectionStripMenuItem1.Name = "connectionStripMenuItem1";
-            this.connectionStripMenuItem1.Size = new System.Drawing.Size(270, 34);
+            this.connectionStripMenuItem1.Size = new System.Drawing.Size(237, 34);
             this.connectionStripMenuItem1.Text = "Connection";
             this.connectionStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
+            // seDéconnecterToolStripMenuItem
+            // 
+            this.seDéconnecterToolStripMenuItem.Name = "seDéconnecterToolStripMenuItem";
+            this.seDéconnecterToolStripMenuItem.Size = new System.Drawing.Size(237, 34);
+            this.seDéconnecterToolStripMenuItem.Text = "Se Déconnecter";
             // 
             // compteToolStripMenuItem
             // 
@@ -103,20 +109,21 @@
             // panierToolStripMenuItem
             // 
             this.panierToolStripMenuItem.Name = "panierToolStripMenuItem";
-            this.panierToolStripMenuItem.Size = new System.Drawing.Size(205, 34);
+            this.panierToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.panierToolStripMenuItem.Text = "Panier";
             this.panierToolStripMenuItem.Click += new System.EventHandler(this.panierToolStripMenuItem_Click_1);
             // 
             // reservationToolStripMenuItem
             // 
             this.reservationToolStripMenuItem.Name = "reservationToolStripMenuItem";
-            this.reservationToolStripMenuItem.Size = new System.Drawing.Size(205, 34);
+            this.reservationToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.reservationToolStripMenuItem.Text = "Reservation";
+            this.reservationToolStripMenuItem.Click += new System.EventHandler(this.reservationToolStripMenuItem_Click);
             // 
             // historiqueToolStripMenuItem
             // 
             this.historiqueToolStripMenuItem.Name = "historiqueToolStripMenuItem";
-            this.historiqueToolStripMenuItem.Size = new System.Drawing.Size(205, 34);
+            this.historiqueToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.historiqueToolStripMenuItem.Text = "Historique";
             // 
             // evenementsToolStripMenuItem
@@ -185,12 +192,6 @@
             this.label3.Size = new System.Drawing.Size(380, 113);
             this.label3.TabIndex = 5;
             this.label3.Text = "Accueil";
-            // 
-            // seDéconnecterToolStripMenuItem
-            // 
-            this.seDéconnecterToolStripMenuItem.Name = "seDéconnecterToolStripMenuItem";
-            this.seDéconnecterToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.seDéconnecterToolStripMenuItem.Text = "Se Déconnecter";
             // 
             // AcceuilForm
             // 

@@ -13,7 +13,7 @@ public partial class AcceuilForm : Form
     private readonly PanierForm _formPanier;
 
     private readonly InscriptionForm formInscription;
-
+    private readonly ReservationForm reservationForm;
     private UserControl activeControl;
     private Panel mainPanel;
 
@@ -24,6 +24,7 @@ public partial class AcceuilForm : Form
         _formConnexion = new ConnexionForm();
         _formEvenem = new ListEventForm();
         _formPanier = new PanierForm();
+        reservationForm=    new ReservationForm();  
         if (Settings.Default.isConnected)
         {
             isConnectedTextLabel.Text = $" Bienvenue, {Settings.Default.UserName}";
@@ -38,54 +39,6 @@ public partial class AcceuilForm : Form
             connectionStripMenuItem1.Visible = true;
             isConnectedTextLabel.Text = "Veuillez vous inscrire ou vous connectez !";
         }
-    }
-
-
-    private void panelAcceuil_Paint(object sender, PaintEventArgs e)
-    {
-    }
-
-    private void reservationToolStripMenuItem_Click(object sender, EventArgs e)
-    {
-        var formReserv = new ReservationForm();
-        formReserv.ShowDialog();
-    }
-
-    private void historiqueToolStripMenuItem_Click(object sender, EventArgs e)
-    {
-        var formReserv = new CompteForm();
-        formReserv.ShowDialog();
-    }
-
-    private void Acceuil_Load(object sender, EventArgs e)
-    {
-    }
-
-
-    private void acceuilToolStripMenuItem_Click(object sender, EventArgs e)
-    {
-    }
-
-    private void evenementsToolStripMenuItem_Click(object sender, EventArgs e)
-    {
-        var formReserv = new ListEventForm();
-        formReserv.ShowDialog();
-    }
-
-    private void label1_Click(object sender, EventArgs e)
-    {
-    }
-
-    private void inscriptionToolStripMenuItem_Click(object sender, EventArgs e)
-    {
-        var formReserv = new InscriptionForm();
-        formReserv.ShowDialog();
-    }
-
-    private void panierToolStripMenuItem_Click(object sender, EventArgs e)
-    {
-        var formReserv = new PanierForm();
-        formReserv.ShowDialog();
     }
 
 
@@ -109,5 +62,10 @@ public partial class AcceuilForm : Form
     {
         _formPanier.GetCart();
         _formPanier.ShowDialog();
+    }
+
+    private void reservationToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+        FormUtilities.ShowFormInPanel(panelAcceuil, reservationForm);
     }
 }

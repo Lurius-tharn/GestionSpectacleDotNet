@@ -54,10 +54,11 @@ public partial class ListEventForm : Form
                 Status = GetDisponibility(dynamicEvent),
                 ImageUrl = dynamicEvent.images[0].url,
                 Description = dynamicEvent?.description ?? string.Empty,
-                Places = dynamicEvent?._embedded.venues[0].upcomingEvents._total,
+                nbPlacesMax = dynamicEvent?._embedded.venues[0].upcomingEvents._total,
                 Prix = dynamicEvent?.priceRanges[0].min,
                 MainClassification = dynamicEvent?.classifications[0].genre.name,
-                MainPromotor = dynamicEvent?.promoter.name
+                MainPromotor = dynamicEvent?.promoter.name,
+                IdApi = dynamicEvent?.id
             };
 
             storedEvents.Add(eventDetails);
@@ -71,7 +72,7 @@ public partial class ListEventForm : Form
                 eventDetails.Type,
                 eventDetails.StartDate,
                 eventDetails.Venue,
-                eventDetails.Places,
+                eventDetails.nbPlacesMax,
                 eventDetails.Prix,
                 image.Image
             );
