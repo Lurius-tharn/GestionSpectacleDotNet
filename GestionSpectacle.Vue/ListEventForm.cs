@@ -1,7 +1,5 @@
-﻿using System.Globalization;
-using GestionSpectacle.Vue;
+﻿using GestionSpectacle.Vue;
 using GestionSpectacle.Vue.utils;
-using Newtonsoft.Json;
 
 namespace WindowsFormsApp1;
 
@@ -10,8 +8,8 @@ public partial class ListEventForm : Form
     private readonly string apiKey = "DdPB8GMtZ2bCJYNiH1pj48zEs1dN98gI";
     private readonly string classification = "Concert";
     private readonly EventForm eventForm;
-    private readonly Stack<Form> formStack = new();
     private readonly List<EventDetail> storedEvents;
+    private readonly TicketMasterApi ticketMasterApi;
     private dynamic cachedEvents;
 
     public ListEventForm()
@@ -19,19 +17,7 @@ public partial class ListEventForm : Form
         InitializeComponent();
         storedEvents = new List<EventDetail>();
         eventForm = new EventForm();
-        eventForm.SetFormParent(this);
-    }
-
-
-    private string ConvertToIso8601DateTime(string inputDate)
-    {
-        if (DateTime.TryParseExact(inputDate, "dd/MM/yyyy HH:mm:ss", null, DateTimeStyles.None, out var parsedDate))
-        {
-            var iso8601Date = parsedDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ");
-            return iso8601Date;
-        }
-
-        return null;
+        ticketMasterApi = new TicketMasterApi();
     }
 
 
@@ -45,21 +31,7 @@ public partial class ListEventForm : Form
             var dynamicEvent = evenement;
 
             // Stocker l'ensemble des détails de l'événement
-            var eventDetails = new EventDetail
-            {
-                Name = dynamicEvent.name,
-                Type = dynamicEvent.type,
-                StartDate = dynamicEvent.dates.start.localDate,
-                Venue = dynamicEvent._embedded.venues[0].name,
-                Status = GetDisponibility(dynamicEvent),
-                ImageUrl = dynamicEvent.images[0].url,
-                Description = dynamicEvent?.description ?? string.Empty,
-                nbPlacesMax = dynamicEvent?._embedded.venues[0].upcomingEvents._total,
-                Prix = dynamicEvent?.priceRanges[0].min,
-                MainClassification = dynamicEvent?.classifications[0].genre.name,
-                MainPromotor = dynamicEvent?.promoter.name,
-                IdApi = dynamicEvent?.id
-            };
+            var eventDetails = ticketMasterApi.SetEventDetail(dynamicEvent);
 
             storedEvents.Add(eventDetails);
 
@@ -87,48 +59,24 @@ public partial class ListEventForm : Form
 
     private async void buttonRechercher_Click_1(object sender, EventArgs e)
     {
-        var startDate = ConvertToIso8601DateTime(dateTimePickerFirst.Value.ToString(CultureInfo.CurrentCulture));
-        var endDate = ConvertToIso8601DateTime(dateTimePickerLast.Value.ToString(CultureInfo.CurrentCulture));
+        var startDate = dateTimePickerFirst.Value;
+        var endDate = dateTimePickerLast.Value;
+        var city = VilleSpectacleInput.Text;
 
-
-        if (dateTimePickerLast.Value <= dateTimePickerFirst.Value)
+        if (endDate <= startDate)
         {
             MessageBox.Show("La date de fin doit être postérieure à la date de début");
             return;
         }
 
-        var apiUrl = "https://app.ticketmaster.com/discovery/v2/events?" +
-                     $"apikey={apiKey}" +
-                     $"&city={VilleSpectacleInput.Text}" +
-                     $"&classificationName={classification}" +
-                     $"&startDateTime={startDate}" +
-                     $"&endDateTime={endDate}" +
-                     "&locale=fr" +
-                     "&sort=date,asc";
-
-
-        using (var client = new HttpClient())
+        try
         {
-            try
-            {
-                var response = await Task.Run(() => client.GetAsync(apiUrl));
-
-                if (response.IsSuccessStatusCode)
-                {
-                    var responseBody = await response.Content.ReadAsStringAsync();
-                    var events = JsonConvert.DeserializeObject<dynamic>(responseBody);
-
-                    FillDataGridView(events);
-                }
-                else
-                {
-                    MessageBox.Show($"Erreur de requête : {response.StatusCode}");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Erreur : {ex.Message}");
-            }
+            var events = await ticketMasterApi.GetEventsAsync(city, startDate, endDate);
+            FillDataGridView(events);
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show($"Erreur : {ex.Message}");
         }
     }
 

@@ -13,9 +13,9 @@ public partial class AcceuilForm : Form
     private readonly PanierForm _formPanier;
 
     private readonly InscriptionForm formInscription;
-    private readonly ReservationForm reservationForm;
     private UserControl activeControl;
     private Panel mainPanel;
+    private ReservationForm reservationForm;
 
     public AcceuilForm()
     {
@@ -24,7 +24,6 @@ public partial class AcceuilForm : Form
         _formConnexion = new ConnexionForm();
         _formEvenem = new ListEventForm();
         _formPanier = new PanierForm();
-        reservationForm=    new ReservationForm();  
         if (Settings.Default.isConnected)
         {
             isConnectedTextLabel.Text = $" Bienvenue, {Settings.Default.UserName}";
@@ -66,6 +65,8 @@ public partial class AcceuilForm : Form
 
     private void reservationToolStripMenuItem_Click(object sender, EventArgs e)
     {
+        reservationForm = new ReservationForm();
+
         FormUtilities.ShowFormInPanel(panelAcceuil, reservationForm);
     }
 }

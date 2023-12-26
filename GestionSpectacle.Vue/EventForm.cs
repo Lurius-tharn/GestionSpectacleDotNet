@@ -1,13 +1,10 @@
 ﻿using GestionSpectacle.Vue.utils;
-using WindowsFormsApp1;
 
 namespace GestionSpectacle.Vue;
 
 public partial class EventForm : Form
 {
     private EventDetail eventDetail;
-
-    private Form formParent;
 
     public EventForm()
     {
@@ -27,14 +24,8 @@ public partial class EventForm : Form
         ShowDialog();
     }
 
-    internal void SetFormParent(ListEventForm formEvenem)
-    {
-        formParent = formEvenem;
-    }
-
     private void button1_Click(object sender, EventArgs e)
     {
-        formParent.Show();
         Close();
     }
 

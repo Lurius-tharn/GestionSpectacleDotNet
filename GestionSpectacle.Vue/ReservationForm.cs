@@ -1,5 +1,6 @@
 ﻿using GestionSpectacle.DAL.Context;
 using GestionSpectacle.Data;
+using GestionSpectacle.Vue;
 using GestionSpectacle.Vue.utils;
 using Microsoft.EntityFrameworkCore;
 
@@ -7,12 +8,15 @@ namespace WindowsFormsApp1;
 
 public partial class ReservationForm : Form
 {
+    private readonly EventForm eventForm;
     private MyDbContext _myDbContext;
+    private TicketMasterApi _ticketMasterApi;
     private GestionnaireBillet gestionnaireBillet;
 
     public ReservationForm()
     {
         InitializeComponent();
+        eventForm = new EventForm();
     }
 
     protected override void OnLoad(EventArgs e)
@@ -23,6 +27,8 @@ public partial class ReservationForm : Form
         _myDbContext.Billets.Load();
         _myDbContext.Spectacles.Load();
         gestionnaireBillet = new GestionnaireBillet();
+        _ticketMasterApi = new TicketMasterApi();
+
         FillDataGridView();
     }
 
@@ -61,7 +67,7 @@ public partial class ReservationForm : Form
             });
     }
 
-    private void reservationDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+    private async void reservationDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
     {
         if (e.ColumnIndex == reservationDataGridView?.Columns["CancelButton"]?.Index)
         {
@@ -82,6 +88,22 @@ public partial class ReservationForm : Form
 
                     reservationDataGridView.Rows.Remove(selectedRow);
                 }
+            }
+        }
+        else if (e.ColumnIndex == reservationDataGridView?.Columns["evenConsult"]?.Index)
+        {
+
+            var selectedRow = reservationDataGridView.Rows[e.RowIndex];
+            var tag = selectedRow.Tag as dynamic;
+
+            if (tag != null)
+            {
+                var spectacleIdApi = tag.SpectacleId.IdApi;
+
+                var dynamicEvent = await _ticketMasterApi.GetEventDetailsAsync(spectacleIdApi);
+                var eventDetail = _ticketMasterApi.SetEventDetail(dynamicEvent);
+                eventForm.DisplayEventInfo(eventDetail);
+                eventForm.Show();
             }
         }
     }
