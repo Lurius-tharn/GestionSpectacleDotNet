@@ -8,21 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GestionSpectacle.Vue
+namespace WindowsFormsApp1
 {
-    public partial class formPanier : Form
+    public partial class CompteForm : Form
     {
-        public formPanier()
+        public CompteForm()
         {
             InitializeComponent();
         }
-
-
-
-        private void buttonPaye_Click(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }

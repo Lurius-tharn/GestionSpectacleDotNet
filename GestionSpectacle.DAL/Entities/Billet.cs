@@ -16,4 +16,5 @@ public class Billet
 
     public virtual Spectacle? IdSpectacleNavigation { get; set; }
     public virtual Utilisateur? IdUtilisateurNavigation { get; set; }
+    public int numeroBillet { get; set; }
 }

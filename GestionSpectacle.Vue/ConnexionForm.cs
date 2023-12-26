@@ -1,14 +1,18 @@
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using GestionSpectacle.DAL.Context;
+using GestionSpectacle.Vue.Properties;
+using GestionSpectacle.Vue.utils;
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
+using WindowsFormsApp1;
 
 namespace GestionSpectacle.Vue;
 
-public partial class FormConnexion : Form
+public partial class ConnexionForm : Form
 {
+    private ListEventForm _listEventForm;
     private MyDbContext _myDbContext;
 
-    public FormConnexion()
+    public ConnexionForm()
     {
         InitializeComponent();
     }
@@ -18,27 +22,7 @@ public partial class FormConnexion : Form
         base.OnLoad(e);
         _myDbContext = new MyDbContext();
         _myDbContext.Utilisateurs.Load();
-    }
-
-    private void textBoxAcceuilUser_TextChanged(object sender, EventArgs e)
-    {
-    }
-
-    private void buttonDeconnexion_Click(object sender, EventArgs e)
-    {
-    }
-
-
-    private void label2_Click(object sender, EventArgs e)
-    {
-    }
-
-    private void textBoxAcceuilPassword_TextChanged(object sender, EventArgs e)
-    {
-    }
-
-    private void label1_Click(object sender, EventArgs e)
-    {
+        _listEventForm = new ListEventForm();
     }
 
     private void buttonConnexion_Click(object sender, EventArgs e)
@@ -48,9 +32,8 @@ public partial class FormConnexion : Form
         if (utilisateur != null)
         {
             var storedHashedPassword =
-                utilisateur.Password; // R�cup�rer le mot de passe hash� depuis la base de donn�es
-            var salt = utilisateur.Salt; // divide by 8 to convert bits to bytes
-            // Utiliser la m�me m�thode de d�rivation pour hasher le mot de passe fourni par l'utilisateur
+                utilisateur.Password;
+            var salt = utilisateur.Salt;
             var hashedPasswordAttempt = Convert.ToBase64String(KeyDerivation.Pbkdf2(
                 textBoxAcceuilPassword.Text,
                 salt,
@@ -58,18 +41,30 @@ public partial class FormConnexion : Form
                 100000,
                 256 / 8));
 
-            // Comparer les deux mots de passe hash�s de mani�re constante en utilisant SequenceEqual
             if (storedHashedPassword.Length == hashedPasswordAttempt.Length &&
                 storedHashedPassword.SequenceEqual(hashedPasswordAttempt))
-                // Mot de passe correct
+            {
+                UserSingleton.Instance.SetUtilisateurInfo(utilisateur.Id, utilisateur.UserName);
+
                 MessageBox.Show("Connexion r�ussie !");
+                if (stayConnectedCheckBox.Checked)
+                {
+                    Settings.Default.UserId = utilisateur.Id;
+                    Settings.Default.UserName = utilisateur.UserName;
+                    Settings.Default.isConnected = true;
+                    Settings.Default.Save();
+                }
+
+                FormUtilities.ShowFormInPanel(panelAcceuil, _listEventForm);
+            }
+
             else
-                // Mot de passe incorrect
+            {
                 MessageBox.Show("Identifiant ou mot de passe incorrect !");
+            }
         }
         else
         {
-            // Utilisateur non trouv�
             MessageBox.Show("Identifiant ou mot de passe incorrect !");
         }
     }

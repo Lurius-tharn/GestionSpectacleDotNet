@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class formCompte
+    partial class CompteForm
     {
         /// <summary>
         /// Required designer variable.
