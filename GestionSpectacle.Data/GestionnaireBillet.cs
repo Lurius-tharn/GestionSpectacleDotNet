@@ -57,7 +57,16 @@ public class GestionnaireBillet
 
     public void AnnulerReservation(Billet billet, Spectacle spectacle)
     {
+        _context.BilletHistoriques.Add(new BilletHistorique
+        {
+            numeroBillet = billet.numeroBillet,
+            Statut = "supprimé",
+            IdSpectacle = billet.IdSpectacle,
+            IdUtilisateur = billet.IdUtilisateur,
+            DateSuppression = DateTime.Now
+        });
         _context.Billets.Remove(billet);
+
         ++spectacle.NbPlace;
         _context.Spectacles.Update(spectacle);
         _context.SaveChanges();

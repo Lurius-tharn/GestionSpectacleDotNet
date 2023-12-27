@@ -27,16 +27,19 @@ create table if not exists billet
 
 create table if not exists billethistorique
 (
-    id         int auto_increment
+    Id            int auto_increment
         primary key,
-    IdBillet   int         null,
-    DateBillet datetime(6) not null,
-    constraint Historique_Billet_billet_null_fk
-        foreign key (IdBillet) references billet (Id)
+    idSpectacle   int         null,
+    idUtilisateur int         null,
+    statut        varchar(36) null,
+    numeroBillet  int         null,
+    dateSuppression datetime null,
+    constraint historiqueBillet_spectacle_null_fk
+        foreign key (idSpectacle) references spectacle (id),
+    constraint historiqueBillet_utilisateur_null_fk
+        foreign key (idUtilisateur) references utilisateur (id)
 );
 
-create index IX_BilletHistorique_IdBillet
-    on billethistorique (IdBillet);
 
 create table if not exists spectacle
 (

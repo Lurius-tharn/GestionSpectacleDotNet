@@ -20,6 +20,8 @@ public partial class InscriptionForm : Form
         InitializeComponent();
     }
 
+    public AcceuilForm AcceuilForm { get; set; } = null!;
+
     protected override void OnLoad(EventArgs e)
     {
         base.OnLoad(e);
@@ -36,6 +38,7 @@ public partial class InscriptionForm : Form
     private void textBox5_TextChanged(object sender, EventArgs e)
     {
     }
+
     private void userNameInput_Validating(object sender, CancelEventArgs e)
     {
         if (string.IsNullOrWhiteSpace(userNameInput.Text))
@@ -52,7 +55,7 @@ public partial class InscriptionForm : Form
 
     private void ValidatePassword(object sender, CancelEventArgs e)
     {
-        TextBox passwordTextBox = (TextBox)sender;
+        var passwordTextBox = (TextBox)sender;
 
         if (string.IsNullOrWhiteSpace(passwordTextBox.Text))
         {
@@ -123,6 +126,8 @@ public partial class InscriptionForm : Form
                 Settings.Default.isConnected = true;
                 Settings.Default.Save();
             }
+
+            AcceuilForm.SetMenuConnect();
 
             FormUtilities.ShowFormInPanel(panelAcceuil, _listEventForm);
 

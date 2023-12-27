@@ -17,6 +17,8 @@ public partial class ConnexionForm : Form
         InitializeComponent();
     }
 
+    public AcceuilForm AcceuilForm { get; set; } = null!;
+
     protected override void OnLoad(EventArgs e)
     {
         base.OnLoad(e);
@@ -54,6 +56,8 @@ public partial class ConnexionForm : Form
                     Settings.Default.isConnected = true;
                     Settings.Default.Save();
                 }
+
+                AcceuilForm.SetMenuConnect();
 
                 FormUtilities.ShowFormInPanel(panelAcceuil, _listEventForm);
             }

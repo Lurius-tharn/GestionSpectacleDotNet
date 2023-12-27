@@ -39,13 +39,8 @@
             this.dateTimePickerFirst = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerLast = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.buttonPanier = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.spectaclesDataGridView = new System.Windows.Forms.DataGridView();
-            this.buttonNext = new System.Windows.Forms.Button();
-            this.buttonPrevious = new System.Windows.Forms.Button();
-            this.monthCalendar = new System.Windows.Forms.MonthCalendar();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.evenNom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.evenType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.evenDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,6 +50,8 @@
             this.evenPrix = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.evenImage = new System.Windows.Forms.DataGridViewImageColumn();
             this.evenConsult = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.monthCalendar = new System.Windows.Forms.MonthCalendar();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panelAcceuil.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -158,25 +155,12 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.buttonPanier);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.buttonNext);
-            this.panel1.Controls.Add(this.buttonPrevious);
             this.panel1.Location = new System.Drawing.Point(350, 27);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1061, 887);
             this.panel1.TabIndex = 2;
-            // 
-            // buttonPanier
-            // 
-            this.buttonPanier.Location = new System.Drawing.Point(466, 790);
-            this.buttonPanier.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.buttonPanier.Name = "buttonPanier";
-            this.buttonPanier.Size = new System.Drawing.Size(117, 37);
-            this.buttonPanier.TabIndex = 4;
-            this.buttonPanier.Text = "Panier";
-            this.buttonPanier.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -210,39 +194,6 @@
             this.spectaclesDataGridView.Size = new System.Drawing.Size(1057, 718);
             this.spectaclesDataGridView.TabIndex = 4;
             this.spectaclesDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.spectaclesDataGridView_CellContentClick);
-            // 
-            // buttonNext
-            // 
-            this.buttonNext.Location = new System.Drawing.Point(897, 777);
-            this.buttonNext.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonNext.Name = "buttonNext";
-            this.buttonNext.Size = new System.Drawing.Size(67, 62);
-            this.buttonNext.TabIndex = 1;
-            this.buttonNext.Text = ">";
-            this.buttonNext.UseVisualStyleBackColor = true;
-            // 
-            // buttonPrevious
-            // 
-            this.buttonPrevious.Location = new System.Drawing.Point(69, 777);
-            this.buttonPrevious.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonPrevious.Name = "buttonPrevious";
-            this.buttonPrevious.Size = new System.Drawing.Size(67, 62);
-            this.buttonPrevious.TabIndex = 0;
-            this.buttonPrevious.Text = "<";
-            this.buttonPrevious.UseVisualStyleBackColor = true;
-            // 
-            // monthCalendar
-            // 
-            this.monthCalendar.Location = new System.Drawing.Point(0, 480);
-            this.monthCalendar.Margin = new System.Windows.Forms.Padding(11, 13, 11, 13);
-            this.monthCalendar.Name = "monthCalendar";
-            this.monthCalendar.TabIndex = 1;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // evenNom
             // 
@@ -308,6 +259,19 @@
             this.evenConsult.Text = "👁️";
             this.evenConsult.Width = 40;
             // 
+            // monthCalendar
+            // 
+            this.monthCalendar.Location = new System.Drawing.Point(0, 480);
+            this.monthCalendar.Margin = new System.Windows.Forms.Padding(11, 13, 11, 13);
+            this.monthCalendar.Name = "monthCalendar";
+            this.monthCalendar.TabIndex = 1;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
             // ListEventForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -330,16 +294,13 @@
         private Panel panelAcceuil;
         private ContextMenuStrip contextMenuStrip1;
         private Panel panel1;
-        private Button buttonPrevious;
         private MonthCalendar monthCalendar;
         private Label label2;
         private Label label1;
         private DateTimePicker dateTimePickerFirst;
         private DateTimePicker dateTimePickerLast;
-        private Button buttonNext;
         private Label label3;
         private Panel panel2;
-        private Button buttonPanier;
         private DataGridView spectaclesDataGridView;
         private Button buttonRechercher;
         private TextBox VilleSpectacleInput;

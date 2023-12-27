@@ -15,6 +15,7 @@ public partial class MyDbContext : DbContext
     }
 
     public virtual DbSet<Utilisateur> Utilisateurs { get; set; } = null!;
+    public virtual DbSet<BilletHistorique> BilletHistoriques { get; set; } = null!;
 
     public virtual DbSet<Billet> Billets { get; set; } = null!;
     public virtual DbSet<Spectacle> Spectacles { get; set; } = null!;
@@ -119,16 +120,34 @@ public partial class MyDbContext : DbContext
         });
         modelBuilder.Entity<BilletHistorique>(entity =>
         {
-            entity.Property(e => e.Id).HasColumnName("id");
+            entity.HasKey(e => e.Id);
+            entity.ToTable("billetHistorique");
 
-            entity.ToTable("BilletHistorique");
+            entity.HasIndex(e => e.IdSpectacle, "Billet_spectacle_null_fk");
 
-            entity.Property(e => e.DateBillet).HasColumnName("DateBillet");
+            entity.HasIndex(e => e.IdUtilisateur, "Billet_utilisateur_null_fk");
 
-            entity.HasOne(d => d.IdBilletNavigation)
+            entity.Property(e => e.IdSpectacle).HasColumnName("idSpectacle");
+
+            entity.Property(e => e.IdUtilisateur).HasColumnName("idUtilisateur");
+
+            entity.Property(e => e.Statut)
+                .HasMaxLength(36)
+                .HasColumnName("statut");
+            entity.Property(e => e.numeroBillet)
+                .HasColumnName("numeroBillet");
+
+            entity.Property(e => e.DateSuppression)
+                .HasColumnName("dateSuppression");
+            entity.HasOne(d => d.IdSpectacleNavigation)
                 .WithMany()
-                .HasForeignKey(d => d.IdBillet)
-                .HasConstraintName("Historique_Billet_billet_null_fk");
+                .HasForeignKey(d => d.IdSpectacle)
+                .HasConstraintName("Billet_spectacle_null_fk");
+
+            entity.HasOne(d => d.IdUtilisateurNavigation)
+                .WithMany()
+                .HasForeignKey(d => d.IdUtilisateur)
+                .HasConstraintName("Billet_utilisateur_null_fk");
         });
 
 

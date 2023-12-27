@@ -11,9 +11,9 @@ public partial class AcceuilForm : Form
 
     private readonly ListEventForm _formEvenem;
     private readonly PanierForm _formPanier;
-
     private readonly InscriptionForm formInscription;
     private UserControl activeControl;
+    private HistoriqueForm historiqueForm;
     private Panel mainPanel;
     private ReservationForm reservationForm;
 
@@ -21,10 +21,18 @@ public partial class AcceuilForm : Form
     {
         InitializeComponent();
         formInscription = new InscriptionForm();
+        formInscription.AcceuilForm = this;
         _formConnexion = new ConnexionForm();
+        _formConnexion.AcceuilForm = this;
+
         _formEvenem = new ListEventForm();
         _formPanier = new PanierForm();
-        if (Settings.Default.isConnected)
+        SetMenuConnect();
+    }
+
+    public void SetMenuConnect()
+    {
+        if (Settings.Default.isConnected || UserSingleton.Instance.IsConnected())
         {
             isConnectedTextLabel.Text = $" Bienvenue, {Settings.Default.UserName}";
             seDéconnecterToolStripMenuItem.Visible = true;
@@ -72,12 +80,17 @@ public partial class AcceuilForm : Form
 
     private void seDéconnecterToolStripMenuItem_Click(object sender, EventArgs e)
     {
-
         Settings.Default.UserId = 0;
         Settings.Default.UserName = null;
         Settings.Default.isConnected = false;
         Settings.Default.Save();
         Application.Exit();
+    }
 
+    private void historiqueToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+        historiqueForm = new HistoriqueForm();
+
+        FormUtilities.ShowFormInPanel(panelAcceuil, historiqueForm);
     }
 }
