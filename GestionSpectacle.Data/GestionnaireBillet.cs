@@ -24,20 +24,24 @@ public class GestionnaireBillet
 
     public void ReserverBillets(Spectacle spectacle, int Idutilisateur, int nombreBillets)
     {
-        if (GetSPectacleInDbByIdApi(spectacle.IdApi) is null)
+        var spactacleInDb = GetSPectacleInDbByIdApi(spectacle.IdApi);
+
+        if (spactacleInDb is null)
         {
             _context.Spectacles.Add(spectacle);
             _context.SaveChanges();
         }
-
-        var spectacleId = spectacle.Id;
+        else
+        {
+            spectacle = spactacleInDb;
+        }
 
         if (spectacle.NbPlace >= nombreBillets)
             for (var i = 1; i <= nombreBillets; i++)
             {
                 var billet = new Billet
                 {
-                    IdSpectacle = spectacleId,
+                    IdSpectacle = spectacle.Id,
                     IdUtilisateur = Idutilisateur,
                     Statut = ReservationStatus.Reserve.ToString(),
                     numeroBillet = i

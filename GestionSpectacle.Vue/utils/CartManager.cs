@@ -6,7 +6,10 @@ public class CartManager
 
     public static void AjouterAuPanier(EventDetail item)
     {
-        _cartItems.Add(item);
+        if (_cartItems.Find(detail => detail.Equals(item)) is not null)
+            _cartItems.Find(detail => detail.Equals(item))!.nbPlaces += item.nbPlaces;
+        else
+            _cartItems.Add(item);
     }
 
     public static List<EventDetail> GetPanierItems()

@@ -54,27 +54,33 @@ public partial class PanierForm : Form
     private void buttonPaye_Click_1(object sender, EventArgs e)
     {
         if (!UserSingleton.Instance.IsConnected())
+        {
             MessageBox.Show(
                 "Vous devez avoir un compte pour reserver ! Inscrivez vous pu connectez-vous via le menu Accueil");
+            return;
+        }
 
-        else if (CartManager.GetPanierItems().Count < 0)
+        if (CartManager.GetPanierItems().Count < 0)
+        {
             MessageBox.Show("Vous devez avoir au moins un artticle dans votre panier. ");
-        else
-            foreach (var eventDetails in CartManager.GetPanierItems())
+            return;
+        }
+
+        foreach (var eventDetails in CartManager.GetPanierItems())
+        {
+            var spectacle = new Spectacle
             {
-                var spectacle = new Spectacle
-                {
-                    Titre = eventDetails.Name,
-                    Date = eventDetails.StartDate,
-                    NbPlace = eventDetails.nbPlacesMax,
-                    imageUrl = eventDetails.ImageUrl,
-                    Lieu = eventDetails.Venue,
-                    Type = eventDetails.Type,
-                    IdApi = eventDetails.IdApi
-                };
-                _gestionnaireBillet.ReserverBillets(spectacle, UserSingleton.Instance.UtilisateurId,
-                    eventDetails.nbPlaces);
-            }
+                Titre = eventDetails.Name,
+                Date = eventDetails.StartDate,
+                NbPlace = eventDetails.nbPlacesMax,
+                imageUrl = eventDetails.ImageUrl,
+                Lieu = eventDetails.Venue,
+                Type = eventDetails.Type,
+                IdApi = eventDetails.IdApi
+            };
+            _gestionnaireBillet.ReserverBillets(spectacle, UserSingleton.Instance.UtilisateurId,
+                eventDetails.nbPlaces);
+        }
 
         MessageBox.Show(
             "Merci pour vos achats ! Nous avons bien pris en compte vos achats, vous les trouverez dans l'onglet Reservation");
