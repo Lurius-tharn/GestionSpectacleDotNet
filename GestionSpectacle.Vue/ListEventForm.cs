@@ -67,6 +67,7 @@ public partial class ListEventForm : Form
         try
         {
             var events = await ticketMasterApi.GetEventsAsync(city, startDate, endDate);
+        
             FillDataGridView(events);
         }
         catch (Exception ex)
@@ -84,4 +85,6 @@ public partial class ListEventForm : Form
             eventForm.DisplayEventInfo(selectedEventDetails);
         }
     }
+
+
 }

@@ -96,13 +96,16 @@
             // 
             // buttonRechercher
             // 
-            this.buttonRechercher.Location = new System.Drawing.Point(110, 833);
+            this.buttonRechercher.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonRechercher.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonRechercher.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonRechercher.Location = new System.Drawing.Point(82, 734);
             this.buttonRechercher.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonRechercher.Name = "buttonRechercher";
-            this.buttonRechercher.Size = new System.Drawing.Size(107, 38);
+            this.buttonRechercher.Size = new System.Drawing.Size(196, 63);
             this.buttonRechercher.TabIndex = 8;
             this.buttonRechercher.Text = "Rechercher";
-            this.buttonRechercher.UseVisualStyleBackColor = true;
+            this.buttonRechercher.UseVisualStyleBackColor = false;
             this.buttonRechercher.Click += new System.EventHandler(this.buttonRechercher_Click_1);
             // 
             // label3
@@ -261,10 +264,12 @@
             // 
             // monthCalendar
             // 
-            this.monthCalendar.Location = new System.Drawing.Point(0, 480);
+            this.monthCalendar.Location = new System.Drawing.Point(16, 438);
             this.monthCalendar.Margin = new System.Windows.Forms.Padding(11, 13, 11, 13);
             this.monthCalendar.Name = "monthCalendar";
+            this.monthCalendar.ShowTodayCircle = false;
             this.monthCalendar.TabIndex = 1;
+           
             // 
             // contextMenuStrip1
             // 
