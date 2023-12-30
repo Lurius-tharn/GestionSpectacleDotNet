@@ -22,7 +22,7 @@ public partial class EventForm : Form
         classificationLabel.Text = eventDetail.MainClassification;
         startDateLabel.Text = eventDetail.StartDate;
         nbPlaceMaxLabel.Text = eventDetail.nbPlacesMax.ToString();
-        if (eventDetail.nbPlacesMax == 0)
+        if (eventDetail.nbPlacesMax == 0 || eventDetail.Status == "Non disponible")
         {
             nbPlacesNumericUpDown.Minimum = 0;
             nbPlacesNumericUpDown.Enabled = false;

@@ -88,7 +88,7 @@
             // 
             // textBoxAcceuilUser
             // 
-            this.textBoxAcceuilUser.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.textBoxAcceuilUser.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxAcceuilUser.Location = new System.Drawing.Point(686, 168);
             this.textBoxAcceuilUser.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxAcceuilUser.Name = "textBoxAcceuilUser";
@@ -101,6 +101,7 @@
             this.textBoxAcceuilPassword.Location = new System.Drawing.Point(686, 253);
             this.textBoxAcceuilPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxAcceuilPassword.Name = "textBoxAcceuilPassword";
+            this.textBoxAcceuilPassword.PasswordChar = '*';
             this.textBoxAcceuilPassword.Size = new System.Drawing.Size(256, 47);
             this.textBoxAcceuilPassword.TabIndex = 26;
             // 

@@ -17,3 +17,8 @@ Vous pouvez utiliser les informations d'identification suivantes pour vous conne
 - **Mot de passe :** Password
 
 N'hésitez pas à explorer les fonctionnalités de l'application une fois connecté !
+
+
+## Lancement de l'application
+
+Pour démarrer l'application, vous pouvez executer sous visual studio GestionSpectacle.Vue.
