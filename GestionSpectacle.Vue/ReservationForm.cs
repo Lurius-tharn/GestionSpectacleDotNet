@@ -41,7 +41,6 @@ public partial class ReservationForm : Form
             .ToList()
             .ForEach(billet =>
             {
-                // C comment le nb de place, faut faire le count 
                 var imageUrl = billet.IdSpectacleNavigation.imageUrl;
 
                 var image = new PictureBox();
@@ -57,12 +56,10 @@ public partial class ReservationForm : Form
                     image.Image
                 );
 
-                // Stocker toutes les informations dans la propriété Tag de la ligne
                 reservationDataGridView.Rows[row].Tag = new
                 {
                     BilletId = billet,
                     SpectacleId = billet.IdSpectacleNavigation
-                    // Ajoutez d'autres propriétés selon vos besoins
                 };
             });
     }

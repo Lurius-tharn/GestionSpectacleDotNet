@@ -34,7 +34,6 @@ public partial class HistoriqueForm : Form
             .ToList()
             .ForEach(billet =>
             {
-                // C comment le nb de place, faut faire le count 
                 var imageUrl = billet.IdSpectacleNavigation.imageUrl;
 
                 var image = new PictureBox();
@@ -51,12 +50,10 @@ public partial class HistoriqueForm : Form
                     billet.DateSuppression.ToString()
                 );
 
-                // Stocker toutes les informations dans la propriété Tag de la ligne
                 historiqueDataGridView.Rows[row].Tag = new
                 {
                     BilletId = billet,
                     SpectacleId = billet.IdSpectacleNavigation
-                    // Ajoutez d'autres propriétés selon vos besoins
                 };
             });
     }

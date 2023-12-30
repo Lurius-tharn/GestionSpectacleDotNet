@@ -48,8 +48,19 @@ public partial class InscriptionForm : Form
         }
         else
         {
-            errorProviderApp.SetError(userNameInput, "");
-            e.Cancel = false;
+            var enteredUserName = userNameInput.Text;
+
+            if (_myDbContext.Utilisateurs.Any(u => u.UserName == enteredUserName))
+            {
+                errorProviderApp.SetError(userNameInput,
+                    "Ce nom d'utilisateur est déjà pris. Veuillez choisir un autre nom.");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProviderApp.SetError(userNameInput, "");
+                e.Cancel = false;
+            }
         }
     }
 
@@ -95,10 +106,9 @@ public partial class InscriptionForm : Form
         if (ValidateChildren(ValidationConstraints.Enabled))
         {
             // hashage
-            var salt = RandomNumberGenerator.GetBytes(128 / 8); // divide by 8 to convert bits to bytes
+            var salt = RandomNumberGenerator.GetBytes(128 / 8);
             Console.WriteLine($"Salt: {Convert.ToBase64String(salt)}");
 
-            // derive a 256-bit subkey (use HMACSHA256 with 100,000 iterations)
             var hashedPassword = Convert.ToBase64String(KeyDerivation.Pbkdf2(
                 passwordnput.Text!,
                 salt,
