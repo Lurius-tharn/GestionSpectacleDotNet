@@ -1,8 +1,8 @@
-CREATE USER 'GestionSpectacle'@'localhost' IDENTIFIED BY 'GestionSpectacle';
+CREATE USER IF NOT EXISTS 'GestionSpectacle'@'localhost' IDENTIFIED BY 'GestionSpectacle';
 GRANT ALL PRIVILEGES ON *.* TO 'GestionSpectacle'@'localhost' WITH GRANT OPTION;
 
 
-create database GestionSpectacle;
+create database if not exists GestionSpectacle;
 use GestionSpectacle;
 
 create table if not exists __efmigrationshistory
@@ -29,7 +29,7 @@ create table if not exists utilisateur
     id       int auto_increment
         primary key,
     nom      varchar(36)  null,
-    userName varchar(36)  null,
+    userName varchar(36) unique null,
     password varchar(364) null,
     salt     binary(16)   null
 );
@@ -66,5 +66,6 @@ create table if not exists billethistorique
 
 
 
+INSERT INTO gestionspectacle.utilisateur ( nom, userName, password, salt) VALUES ( 'Admin', 'Admin', 'i+zWjh3UkOOkS8IzG82XeLP7R0hjOONSCAh0li34b3U=', 0xF4E7517C132EED0548337FD332E43B7B);
 
 

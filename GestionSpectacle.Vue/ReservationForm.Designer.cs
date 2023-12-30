@@ -34,7 +34,6 @@
             this.panelAcceuil = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.reservationDataGridView = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
             this.IdReservation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.evenNom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumeroBillet = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,6 +44,7 @@
             this.evenImage = new System.Windows.Forms.DataGridViewImageColumn();
             this.evenConsult = new System.Windows.Forms.DataGridViewButtonColumn();
             this.CancelButton = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelAcceuil.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reservationDataGridView)).BeginInit();
@@ -82,6 +82,7 @@
             // 
             // reservationDataGridView
             // 
+            this.reservationDataGridView.AllowUserToAddRows = false;
             this.reservationDataGridView.ColumnHeadersHeight = 34;
             this.reservationDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.reservationDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -104,17 +105,6 @@
             this.reservationDataGridView.Size = new System.Drawing.Size(1415, 687);
             this.reservationDataGridView.TabIndex = 5;
             this.reservationDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.reservationDataGridView_CellContentClick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(503, 12);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(359, 69);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Reservation";
             // 
             // IdReservation
             // 
@@ -187,6 +177,17 @@
             this.CancelButton.MinimumWidth = 8;
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Width = 30;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(503, 12);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(359, 69);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Reservation";
             // 
             // ReservationForm
             // 

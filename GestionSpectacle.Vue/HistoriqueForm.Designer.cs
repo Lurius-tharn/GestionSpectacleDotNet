@@ -31,7 +31,6 @@
             this.panelAcceuil = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.historiqueDataGridView = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
             this.IdReservation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.evenNom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumeroBillet = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,6 +40,7 @@
             this.evenPrix = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.evenImage = new System.Windows.Forms.DataGridViewImageColumn();
             this.DaterSuppression = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelAcceuil.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.historiqueDataGridView)).BeginInit();
@@ -66,6 +66,8 @@
             // 
             // historiqueDataGridView
             // 
+            this.historiqueDataGridView.AllowUserToAddRows = false;
+            this.historiqueDataGridView.AllowUserToDeleteRows = false;
             this.historiqueDataGridView.ColumnHeadersHeight = 34;
             this.historiqueDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.historiqueDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -86,17 +88,6 @@
             this.historiqueDataGridView.RowTemplate.Height = 70;
             this.historiqueDataGridView.Size = new System.Drawing.Size(1415, 687);
             this.historiqueDataGridView.TabIndex = 5;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(503, 12);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(308, 69);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Historique";
             // 
             // IdReservation
             // 
@@ -160,6 +151,17 @@
             this.DaterSuppression.MinimumWidth = 8;
             this.DaterSuppression.Name = "DaterSuppression";
             this.DaterSuppression.Width = 150;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(503, 12);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(308, 69);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Historique";
             // 
             // HistoriqueForm
             // 

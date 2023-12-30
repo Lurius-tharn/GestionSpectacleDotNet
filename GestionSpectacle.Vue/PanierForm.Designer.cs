@@ -59,6 +59,7 @@
             // 
             // cartDataGridView
             // 
+            this.cartDataGridView.AllowUserToAddRows = false;
             this.cartDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.cartDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.panierTitre,

@@ -176,6 +176,7 @@
             // 
             // spectaclesDataGridView
             // 
+            this.spectaclesDataGridView.AllowUserToAddRows = false;
             this.spectaclesDataGridView.ColumnHeadersHeight = 34;
             this.spectaclesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.spectaclesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -192,6 +193,7 @@
             this.spectaclesDataGridView.Location = new System.Drawing.Point(0, 0);
             this.spectaclesDataGridView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.spectaclesDataGridView.Name = "spectaclesDataGridView";
+            this.spectaclesDataGridView.RowHeadersVisible = false;
             this.spectaclesDataGridView.RowHeadersWidth = 51;
             this.spectaclesDataGridView.RowTemplate.Height = 70;
             this.spectaclesDataGridView.Size = new System.Drawing.Size(1057, 718);
@@ -269,7 +271,6 @@
             this.monthCalendar.Name = "monthCalendar";
             this.monthCalendar.ShowTodayCircle = false;
             this.monthCalendar.TabIndex = 1;
-           
             // 
             // contextMenuStrip1
             // 
